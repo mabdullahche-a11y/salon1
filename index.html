@@ -1,0 +1,2445 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FBF7EE">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%239B1B30'/%3E%3Cpath fill='%23FBF7EE' d='M16 4c0 7-5 12-12 12 7 0 12 5 12 12 0-7 5-12 12-12-7 0-12-5-12-12Z'/%3E%3C/svg%3E">
+  <title>Shiza Salon | Bridal, Hair &amp; Beauty in Gujranwala</title>
+  <meta name="description" content="Explore bridal makeup, hair styling, skin care and more at Shiza Salon in Gujranwala, Pakistan. Browse our services and plan your appointment.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_PK">
+  <meta property="og:site_name" content="Shiza Salon">
+  <meta property="og:title" content="Shiza Salon | Bridal, Hair &amp; Beauty in Gujranwala">
+  <meta property="og:description" content="Bridal looks, beautiful hair and everyday beauty rituals in Gujranwala, Pakistan.">
+  <script>
+    // REELS: Replace these placeholders with full Instagram reel URLs, newest first.
+    const REELS = [
+      'https://www.instagram.com/reel/REPLACE_REEL_1/',
+      'https://www.instagram.com/reel/REPLACE_REEL_2/',
+      'https://www.instagram.com/reel/REPLACE_REEL_3/',
+    ];
+    const CONFIG = {
+      WHATSAPP: '923215928003',
+      GOOGLE_PROFILE_URL: 'https://share.google/XXqeTulvmb62hRuFP',
+      INSTAGRAM_URL: 'https://www.instagram.com/shiza_salon/?hl=en',
+      GOOGLE_RATING: null,
+      GOOGLE_REVIEW_COUNT: null,
+      SALON_ADDRESS: '',
+      // [HOURS] Provide all seven days using HH:mm in Pakistan time. [] means closed.
+      // Example shape: { mon: [['11:00', '19:00']], tue: [], wed: [], thu: [], fri: [], sat: [], sun: [] }
+      HOURS: null,
+      ANNOUNCEMENT: '', // Optional [OFFER_TEXT]
+      CURSOR_PETAL: true,
+      BRIDAL_HERO: '', // [BRIDAL_HERO_IMAGE] Keep this as hero image 1.
+      // [SERVICE_PHOTOS] Set photo to true to use assets/services/<slug>.jpg, or use a URL/data URI.
+      // Optional image alt, verified starting price (PKR), and duration go with each service.
+      SERVICES: [
+        { slug: 'bridal-makeup', name: 'Bridal Makeup', category: 'Bridal', layout: 'featured', description: 'Plan makeup around your outfit and jewellery.', photo: '', price: null },
+        { slug: 'hair-styling-cutting', name: 'Hair Styling & Colour', category: 'Hair', layout: 'tall', description: 'Cuts, colour, smoothing and occasion styling.', photo: '', price: null },
+        { slug: 'facials-skin-care', name: 'Facials & Skin', category: 'Skin', layout: 'wide', description: 'Facials with room to discuss your skin sensitivities.', photo: '', price: null },
+        { slug: 'nail-art', name: 'Nails', category: 'Nails', layout: 'tall', description: 'Choose your shape, colour and nail details.', photo: '', price: null },
+        { slug: 'party-makeup', name: 'Party Makeup', category: 'Bridal', layout: '', description: 'Makeup tailored to your outfit and event.', photo: '', price: null },
+        { slug: 'threading-waxing', name: 'Threading & Waxing', category: 'Grooming', layout: '', description: 'Brow shaping, threading and waxing by area.', photo: '', price: null },
+        { slug: 'spa-massage', name: 'Spa & Massage', category: 'Grooming', layout: '', description: 'Ask about available treatments and their duration.', photo: '', price: null },
+      ],
+      REVIEW_PLACEHOLDERS: [
+        { name: 'Review slot 1', text: 'Approved client feedback will appear here.' },
+        { name: 'Review slot 2', text: 'A second approved review can be added here.' },
+        { name: 'Review slot 3', text: 'A third approved review can be added here.' },
+      ],
+      REVIEWS: [], // [REAL_GOOGLE_REVIEWS] Add entries as { name: '', text: '' } with approved copy.
+      PROMISES: [
+        { title: 'Products', text: '[Product details pending]' },
+        { title: 'Tools & hygiene', text: '[Hygiene policy pending]' },
+        { title: 'Bridal trials', text: '[Bridal trial policy pending]' },
+        { title: 'Appointment privacy', text: '[Appointment privacy details pending]' },
+      ],
+      STATS: [], // Optional verified figures, e.g. entries with { label, value, suffix }.
+      // Supply approved salon photos as { src, alt }, keyed by the gallery tile title.
+      GALLERY: {},
+      TEAM: [
+        { name: 'Team member pending', role: 'Role pending', speciality: 'Speciality pending', photo: '', alt: '' },
+        { name: 'Team member pending', role: 'Role pending', speciality: 'Speciality pending', photo: '', alt: '' },
+        { name: 'Team member pending', role: 'Role pending', speciality: 'Speciality pending', photo: '', alt: '' },
+      ],
+      // [BEFORE_AFTER_PHOTOS] Use photos only with documented client permission.
+      TRANSFORMATIONS: [
+        { title: 'Bridal makeup', before: '', beforeAlt: '', after: '', afterAlt: '' },
+        { title: 'Hair styling', before: '', beforeAlt: '', after: '', afterAlt: '' },
+      ],
+    };
+    if (CONFIG.BRIDAL_HERO) {
+      const preload = document.createElement('link');
+      preload.rel = 'preload';
+      preload.as = 'image';
+      preload.href = CONFIG.BRIDAL_HERO;
+      preload.fetchPriority = 'high';
+      document.head.append(preload);
+    }
+  </script>
+  <!-- Add [SITE_URL] and [SOCIAL_SHARE_IMAGE_URL] as og:url and og:image when publishing. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Shiza Salon",
+    "description": "Bridal makeup, hair styling and beauty salon in Gujranwala, Pakistan.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gujranwala",
+      "addressRegion": "Punjab",
+      "addressCountry": "PK"
+    },
+    "sameAs": [
+      "https://www.instagram.com/shiza_salon/?hl=en",
+      "https://share.google/XXqeTulvmb62hRuFP"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Hallmark / v2.0.0 / editorial / Shiza Salon brand / full redesign / magazine cover / book / signature: drifting floral damask against crimson */
+    /* Critique: Let the bridal detail carry the cover. Use open rules and changing image proportions through the service menu. */
+    /* Hallmark · dropped https://wa.me/923215928003 · service names and the corresponding encoded messages changed at the owner's request; the generic destination and form wiring are preserved. */
+    /* Hallmark · dropped hair styling & cutting, hair colour & keratin, facials & skin care, nail art, [team_member_name] · consolidate or relabel per the brief. */
+    /* Hallmark · reworded "your bridal look, made personal." to "makeup for your mehndi, barat and walima." · state the occasions. */
+    /* Hallmark · reworded "signature services." to "the salon menu" · plain service heading. */
+    /* Hallmark · waive 39b · button.gallery-tile is itself the media preview · Keep the gallery photo itself clickable. */
+    /* Hallmark · waive 77 · the divider is deliberately a narrow decorative strip · Give the service menu and reviews their own visual rhythm. */
+    /* Hallmark · waive 81 · team and client images were absent from the supplied material · Branded, labelled patterns reserve those slots without suggesting third-party work belongs to the salon. */
+    :root {
+      color-scheme: light;
+      --crimson: #9B1B30;
+      --deep: #7A1426;
+      --highlight: #C8283F;
+      --ivory: #FBF7EE;
+      --sand: #F3EBDD;
+      --gold: #D9C7A3;
+      --ink: #2A0E14;
+      --wine: #3B0A14;
+      --page: var(--ivory);
+      --alt: var(--sand);
+      --card: #fffaf1;
+      --text: var(--ink);
+      --muted: #63444a;
+      --accent: var(--crimson);
+      --line: var(--gold);
+      --focus: var(--crimson);
+      --shadow: 0 16px 38px #7a142614;
+      --display: "Cormorant Garamond", Georgia, serif;
+      --body: "Jost", system-ui, sans-serif;
+      --gutter: clamp(1.25rem, 5.3vw, 5.5rem);
+      --radius: 18px;
+      --nav-height: 4.4rem;
+      --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --motion-time: 560ms;
+      --pigment-1: #48111c;
+      --pigment-2: #511622;
+      --pigment-3: #e5c8bf;
+      --pigment-4: #ffc2be;
+      --pigment-5: #986763;
+      --pigment-6: #ffb7b3;
+      --pigment-7: #22050d62;
+      --pigment-8: #7a142626;
+      --pigment-9: #7a142611;
+      --pigment-10: #3b0a14d6;
+      --pigment-11: #9b1b3022;
+      --pigment-12: #e2aa91;
+      --pigment-13: #aa4755;
+      --pigment-14: #a75161;
+      --pigment-15: #3b0a14;
+      --pigment-16: #fbf7ee91;
+      --pigment-17: #fff2d41c;
+      --pigment-18: #000;
+      --pigment-19: #3b0a14b8;
+      --pigment-20: #9b1b302e;
+      --pigment-21: #e8c8aa;
+      --pigment-22: #a56859;
+      --pigment-23: #c1967e;
+      --pigment-24: #472021;
+      --pigment-25: #f0d0b4;
+      --pigment-26: #aa6665;
+      --pigment-27: #c79381;
+      --pigment-28: #713a49;
+      --pigment-29: #efa49d;
+      --pigment-30: #933748;
+      --pigment-31: #b86a70;
+      --pigment-32: #4c1020;
+      --pigment-33: #d8a978;
+      --pigment-34: #923b42;
+      --pigment-35: #a46554;
+      --pigment-36: #42171b;
+      --pigment-37: #e6d2a9;
+      --pigment-38: #a87662;
+      --pigment-39: #b9a386;
+      --pigment-40: #58443a;
+      --pigment-41: #fbf7ee73;
+      --pigment-42: #fff2dcb8;
+      --pigment-43: #f3ebddd2;
+      --pigment-44: #d9c7a377;
+      --pigment-45: #f3ebdd;
+      --pigment-46: #fbf7ee77;
+      --pigment-47: #9b1b3050;
+      --pigment-48: #9b1b3000;
+      --pigment-49: #2a0e1466;
+      --pigment-50: #2a0e14be;
+      --pigment-51: #7a142610;
+      --pigment-52: #3b0a14f5;
+      --pigment-53: #c78873;
+      --pigment-54: #9b4454;
+      --pigment-55: #fbf7ee88;
+      --pigment-56: #3b0a14e8;
+      --pigment-57: #c89983;
+      --pigment-58: #b17069;
+      --pigment-59: #591c2a;
+      --pigment-60: #270a13f0;
+      --pigment-61: #270a13a8;
+      --pigment-62: #270a1329;
+      --pigment-63: #270a13c7;
+      --pigment-64: #fbf7ee29;
+      --pigment-65: #9b1b3029;
+      --pigment-66: #270a13;
+      --pigment-67: #270a13bd;
+      --pigment-68: #270a1333;
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --page: var(--wine);
+      --alt: var(--pigment-1);
+      --card: var(--pigment-2);
+      --text: var(--ivory);
+      --muted: var(--pigment-3);
+      --accent: var(--pigment-4);
+      --line: var(--pigment-5);
+      --focus: var(--pigment-6);
+      --shadow: 0 16px 38px var(--pigment-7);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 1rem); }
+    body { margin: 0; background: var(--page); color: var(--text); font: 400 1rem/1.55 var(--body); }
+    body:has(dialog[open]), body.menu-open { overflow-y: hidden; }
+    h1, h2, h3, p, figure, blockquote, dl, dd { margin: 0; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: .98; }
+    h1, h2 { letter-spacing: -.049em; }
+    h2 { font-size: clamp(3.35rem, 6.6vw, 6.05rem); }
+    h3 { font-size: 1.83rem; letter-spacing: -.025em; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; }
+    ::selection { background: var(--crimson); color: var(--ivory); }
+    [hidden] { display: none !important; }
+    .icon { width: 1.25em; height: 1.25em; flex: none; vertical-align: middle; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    .skip { position: fixed; z-index: 110; inset: .7rem auto auto 1rem; padding: .75rem 1rem; background: var(--card); transform: translateY(-170%); }
+    .skip:focus { transform: none; }
+    .wrap { width: min(100% - var(--gutter) * 2, 87rem); margin-inline: auto; }
+    .section { padding-block: clamp(4.5rem, 8.5vw, 8rem); }
+    .eyebrow, .micro { font-size: .71rem; font-weight: 600;   }
+    .eyebrow { display: flex; align-items: center; gap: .65rem; color: var(--accent); }
+    .eyebrow .icon { font-size: .95rem; }
+    .lede { color: var(--muted); max-width: 33rem; }
+    .section-head { display: grid; gap: .9rem; margin-bottom: clamp(1.7rem, 4vw, 3.4rem); }
+    .section-head.center { justify-items: center; text-align: center; }
+    .head-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.1rem; flex-wrap: wrap; }
+    .section-index { font-size: .68rem; font-weight: 600; color: var(--accent);  }
+    .button, .icon-button {
+      display: inline-flex; justify-content: center; align-items: center; gap: 8px;
+      min-height: 3rem; border: 1px solid var(--line); border-radius: 99px;
+      background: transparent; font-size: .88rem; font-weight: 600; white-space: nowrap;
+      transition: transform .4s var(--motion-ease);
+    }
+    .button { padding: .72rem 1.15rem; position: relative; overflow: hidden; isolation: isolate; }
+    .button.primary { background: var(--crimson); border-color: var(--crimson); color: var(--ivory); box-shadow: 0 8px 20px var(--pigment-8); }
+    .button.primary:hover { background: var(--deep); border-color: var(--deep); }
+    .button:not(.primary):hover, .icon-button:hover { background: var(--alt); border-color: var(--accent); }
+    .icon-button { width: 2.75rem; min-height: 2.75rem; flex: none; }
+    .button:active, .icon-button:active { scale: .98; }
+    .text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 600; }
+    .text-link:hover { text-decoration: underline; text-underline-offset: .28rem; }
+    .scroll-progress { position: fixed; z-index: 105; inset: 0 0 auto; height: 3px; background: var(--crimson); transform-origin: left; transform: scaleX(0); pointer-events: none; }
+    .preloader { position: fixed; z-index: 120; inset: 0; display: grid; place-content: center; justify-items: center; gap: .4rem; background: var(--page); color: var(--accent); opacity: 0; visibility: hidden; pointer-events: none; }
+    .preloader .wordmark { font-size: clamp(3rem, 9vw, 6rem); }
+    .site-header { position: sticky; inset-block-start: 0; z-index: 90;  }
+    
+    .nav-bar { display: flex; align-items: center; justify-content: space-between; gap: .8rem; min-height: var(--nav-height); border-bottom: 1px solid var(--line); }
+    .brand { display: inline-flex; align-items: center; flex: none; gap: 8px; color: var(--accent); }
+    .brand > .icon { width: 1.27rem; height: 1.27rem; }
+    .wordmark { font: italic 600 2.14rem/.88 var(--display); letter-spacing: -.055em; white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: clamp(.8rem, 1.65vw, 1.6rem); }
+    .nav-links a { position: relative; font-size: .87rem; font-weight: 500; white-space: nowrap; padding-block: .42rem; }
+    .nav-links a::after { content: ""; position: absolute; inset: auto 0 0; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform 480ms var(--motion-ease); }
+    .nav-links a:hover::after, .nav-links a:focus-visible::after { scale: 1; transform-origin: left; }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .nav-actions .button { min-height: 2.65rem; padding: .54rem .9rem; }
+    .theme-toggle { border-color: transparent; }
+    .hamburger { display: grid; place-content: center; gap: 8px; }
+    .hamburger span { display: block; width: 17px; height: 1px; background: currentColor; transition: transform 480ms var(--motion-ease); }
+    .hamburger[aria-expanded="true"] span:first-child { transform: translateY(3px) rotate(45deg); }
+    .hamburger[aria-expanded="true"] span:last-child { transform: translateY(-3px) rotate(-45deg); }
+    .mobile-menu {
+      position: fixed; inset: var(--menu-top, var(--nav-height)) 0 0; z-index: 85;
+      background: var(--page); overflow: auto; visibility: hidden; transform: translateX(100%);
+      transition: transform 480ms var(--motion-ease);
+    }
+    .menu-open .mobile-menu { transform: none; visibility: visible; transition-delay: 0s; }
+    .mobile-menu .wrap { display: grid; padding-block: 1.35rem 2rem; }
+    .mobile-menu a:not(.button) { font: 600 2.2rem/1 var(--display); padding: .63rem 0; border-bottom: 1px solid var(--line); }
+    .mobile-menu .button { justify-self: start; margin-top: 1.4rem; }
+    .desktop-only { display: none; }
+    .hero { position: relative; padding-block: clamp(2.5rem, 5.2vw, 5.2rem) clamp(2.1rem, 4.7vw, 4rem); }
+    .hero-grid { display: grid; align-items: center; gap: clamp(1.7rem, 4.8vw, 5rem); }
+    .hero-copy { position: relative; }
+    .hero-copy > .eyebrow { margin-bottom: 1.1rem; }
+    h1 { font-size: clamp(3.65rem, 10.5vw, 8.15rem); line-height: .86; }
+    .hero-word { display: inline-block; }
+    .hero-copy .lede { margin-top: clamp(1rem, 2.3vw, 1.65rem); max-width: 29rem; font-size: clamp(1rem, 1.5vw, 1.13rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: clamp(1.15rem, 2.7vw, 2rem); }
+    .hero-visual { position: relative; min-width: 0; }
+    .hero-stage {
+      position: relative; min-height: 19rem; height: clamp(19rem, 85vw, 29rem); isolation: isolate;
+      border-radius: var(--radius); overflow: hidden; background: var(--wine); cursor: grab; touch-action: pan-y;
+      box-shadow: var(--shadow);
+    }
+    .hero-stage:active { cursor: grabbing; }
+    .hero-slide { position: absolute; inset: 0; transition: opacity 640ms var(--motion-ease); }
+    .hero-slide[aria-hidden="true"] { opacity: 0; }
+    .hero-slide .art, .hero-slide img { position: absolute; inset: -5% 0; translate: 0 var(--drift, 0px); }
+    .hero-slide img { width: 100%; height: 110%; object-fit: cover; }
+    .hero-slide:has(img)::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--pigment-10), var(--pigment-11) 62%); }
+    .hero-stage:has(.hero-slide.is-active img) .hero-monogram { display: none; }
+    .art {
+      position: relative; overflow: hidden; isolation: isolate; background:
+        radial-gradient(ellipse at 66% 30%, var(--light) 0, transparent 39%),
+        radial-gradient(ellipse at 27% 71%, var(--bloom) 0, transparent 57%),
+        linear-gradient(135deg, var(--tone), var(--base) 76%);
+      --light: var(--pigment-12); --bloom: var(--pigment-13); --tone: var(--pigment-14); --base: var(--pigment-15); --art-line: var(--pigment-16);
+    }
+    .art::before {
+      content: ""; position: absolute; inset: -47% -36%; z-index: -1;
+      background: repeating-radial-gradient(ellipse at 52% 53%, transparent 0 20px, var(--pigment-17) 21px, transparent 22px 38px);
+      transform: rotate(-28deg) scale(1.1,.74);
+      mask-image: linear-gradient(125deg, transparent 12%, var(--pigment-18) 58%, transparent 87%);
+    }
+    .art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--pigment-19), transparent 46%), linear-gradient(135deg, var(--pigment-20), transparent 62%); pointer-events: none; }
+    .art-hair { --light: var(--pigment-21); --bloom: var(--pigment-22); --tone: var(--pigment-23); --base: var(--pigment-24); }
+    .art-skin { --light: var(--pigment-25); --bloom: var(--pigment-26); --tone: var(--pigment-27); --base: var(--pigment-28); }
+    .art-nails { --light: var(--pigment-29); --bloom: var(--pigment-30); --tone: var(--pigment-31); --base: var(--pigment-32); }
+    .art-party { --light: var(--pigment-33); --bloom: var(--pigment-34); --tone: var(--pigment-35); --base: var(--pigment-36); }
+    .art-spa { --light: var(--pigment-37); --bloom: var(--pigment-38); --tone: var(--pigment-39); --base: var(--pigment-40); }
+    .artwork { position: absolute; inset: 9% 8%; width: 84%; height: 82%; color: var(--art-line); }
+    .artwork use { fill: none; stroke: currentColor; stroke-width: .8; }
+    .hero-frame { position: absolute; z-index: 2; inset: .75rem; border: 1px solid var(--pigment-41); border-radius: 12px; pointer-events: none; }
+    .hero-monogram { position: absolute; inset: 0; display: grid; place-content: center; z-index: 1; color: var(--pigment-42); font: italic 500 clamp(6.5rem, 20vw, 15rem)/1 var(--display); letter-spacing: -.15em; padding-right: .15em; pointer-events: none; }
+    .carousel-controls { display: flex; gap: .42rem; align-items: center; }
+    .hero-controls { margin-top: .8rem; display: flex; justify-content: space-between; gap: 8px; align-items: center; color: var(--muted); }
+    .slide-count { display: flex; align-items: center; gap: .5rem; font-variant-numeric: tabular-nums; }
+    .hero-controls .icon-button { width: 2.75rem; }
+    .marquees { position: relative; }
+    .marquee { container-type: inline-size; overflow: hidden; border-top: 1px solid var(--line); background: var(--page); color: var(--accent); }
+    .marquee.dark { background: var(--crimson); color: var(--ivory); border-color: var(--crimson); }
+    .marquee-track { display: flex; width: max-content; animation: ticker 36s linear infinite; }
+    .marquee.dark .marquee-track { animation-direction: reverse; }
+    .marquee-track span { padding: .72rem .6em; font: 600 clamp(1.45rem, 3.2vw, 2.65rem)/1 var(--display);  white-space: nowrap; }
+    .marquees.is-paused .marquee-track, .marquees:not(.in-view) .marquee-track { animation-play-state: paused; }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+    .marquee-pause { position: absolute; z-index: 2; inset: 50% var(--gutter) auto auto; translate: 0 -50%; background: var(--card); color: var(--accent); box-shadow: var(--shadow); }
+    .wine-section { --focus: var(--pigment-4); color: var(--ivory); background: var(--wine); }
+    .wine-section .eyebrow, .wine-section h2 em, .wine-section .text-link { color: var(--pigment-4); }
+    .wine-section .lede { color: var(--pigment-43); }
+    .gallery { background: var(--page); }
+    .gallery-track {
+      display: grid; grid-auto-flow: column; grid-auto-columns: min(80%, 21rem); gap: .9rem;
+      overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory;
+      scrollbar-width: thin; scrollbar-color: var(--accent) var(--alt); padding: .28rem .25rem .8rem; cursor: grab;
+    }
+    .gallery-track.is-dragging { scroll-snap-type: none; cursor: grabbing; }
+    .gallery-tile { scroll-snap-align: start; text-align: left; display: block; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .gallery-tile:focus-visible { outline-offset: -3px; }
+    .gallery-tile .art, .gallery-tile img { display: block; width: 100%; aspect-ratio: 1 / 1.04; object-fit: cover; }
+    .gallery-tile .artwork { transition: transform 760ms var(--motion-ease); }
+    .gallery-tile:hover .artwork, .gallery-tile:focus-visible .artwork { transform: scale(1.065); }
+    .gallery-caption { display: flex; justify-content: space-between; align-items: center; padding: .65rem .83rem; gap: .5rem; }
+    .gallery-caption strong { font: 600 1.55rem/1 var(--display); }
+    .gallery-caption .icon { color: var(--accent); }
+    .social { background: var(--alt); }
+    .social-grid { display: grid; gap: .85rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr)); }
+    .social-card { display: grid; justify-items: start; align-content: space-between; gap: .65rem; padding: 1.25rem; min-height: 13rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); transition: transform var(--motion-time) var(--motion-ease); }
+    .social-card:hover, .social-card:focus-visible { translate: 0 -5px; border-color: var(--accent); }
+    .social-card > .icon { color: var(--accent); width: 2rem; height: 2rem; margin-bottom: .3rem; transition: transform var(--motion-time) var(--motion-ease); }
+    .social-card:hover > .icon { rotate: -9deg; }
+    .social-card p { color: var(--muted); font-size: .92rem; }
+    .social-card .text-link { font-size: .87rem; }
+    .faq-layout { display: grid; gap: 1.25rem; }
+    .faq-layout .section-head { align-content: start; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-list details { border-bottom: 1px solid var(--line); }
+    .faq-list summary { display: flex; align-items: center; gap: .65rem; cursor: pointer; list-style: none; padding: 1rem .1rem; font-weight: 600; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary .section-index { min-width: 1.6rem; }
+    .faq-list summary > .icon { margin-left: auto; color: var(--accent); transition: transform var(--motion-time) var(--motion-ease); }
+    .faq-list details[open] summary > .icon { transform: rotate(45deg); }
+    .faq-list .answer { padding: 0 1.5rem 1rem 2.3rem; color: var(--muted); }
+    .footer { border-top: 4px solid var(--highlight); padding-top: clamp(3rem, 6vw, 5rem); }
+    .footer-grid { display: grid; gap: 2.1rem; padding-bottom: 2.35rem; }
+    .footer .brand { color: var(--ivory); }
+    .footer .wordmark { font-size: 2.9rem; }
+    .footer-intro { margin-top: .75rem; color: var(--pigment-43); max-width: 20rem; }
+    .footer-social { display: flex; gap: 8px; margin-top: 1rem; }
+    .footer-social .icon-button { border-color: var(--pigment-44); }
+    .footer-social .icon-button:hover { background: var(--deep); }
+    .footer h2 { font-size: 1.9rem; letter-spacing: -.025em; margin-bottom: .7rem; }
+    .footer address { font-style: normal; }
+    .footer address p + p { margin-top: .55rem; }
+    .footer address span { color: var(--pigment-43); }
+    .footer-links { display: grid; gap: .28rem; align-content: start; }
+    .footer a:not(.brand):hover { text-decoration: underline; text-underline-offset: .22rem; }
+    .map iframe { display: block; width: 100%; height: 11rem; border: 1px solid var(--pigment-44); border-radius: 13px; background: var(--pigment-45); }
+    .map .text-link { margin-top: .65rem; }
+    .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .65rem; border-top: 1px solid var(--pigment-44); padding: .85rem 0 1.2rem; padding-right: 3.2rem; color: var(--pigment-43); font-size: .82rem; }
+    .floating { position: fixed; z-index: 70; right: max(.8rem, env(safe-area-inset-right)); bottom: max(.85rem, env(safe-area-inset-bottom)); display: grid; justify-items: end; gap: .5rem; }
+    .floating .whatsapp { background: var(--crimson); color: var(--ivory); border: 1px solid var(--pigment-46); width: 3rem; min-height: 3rem; font-size: 1.2rem; box-shadow: 0 0 0 0 var(--pigment-47); }
+    .floating .whatsapp:hover { background: var(--deep); }
+    .floating .back-top { background: var(--card); color: var(--accent); box-shadow: var(--shadow); opacity: 0; visibility: hidden; translate: 0 6px; transition: opacity 480ms var(--motion-ease); }
+    .floating .back-top.is-visible { opacity: 1; visibility: visible; translate: 0; }
+    dialog { width: min(calc(100% - 2rem), 32rem); max-height: calc(100% - 2rem); padding: 1.45rem; color: var(--text); border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: 0 18px 75px var(--pigment-49); }
+    dialog::backdrop { background: var(--pigment-50); backdrop-filter: blur(3px); }
+    dialog h2 { font-size: clamp(2.35rem, 7vw, 3.6rem); }
+    dialog .dialog-close { position: absolute; top: .7rem; right: .7rem; z-index: 2; background: var(--card); }
+    dialog .dialog-heading { margin: .4rem 3rem .85rem 0; }
+    dialog p { margin-bottom: 1rem; color: var(--muted); }
+    .lightbox { width: min(calc(100% - 2rem), 39rem); padding: .72rem; }
+    .lightbox .art, .lightbox img { width: 100%; aspect-ratio: 5/4; object-fit: contain; border-radius: 12px; }
+    .lightbox .gallery-caption { gap: .65rem; flex-wrap: wrap; }
+    .lightbox h2 { font-size: clamp(2rem, 6vw, 2.8rem); }
+    .js.reveal-ready .reveal:not(.is-visible) { opacity: 0; transform: translateY(20px); }
+    .reveal { transition: opacity var(--motion-time) var(--motion-ease), transform var(--motion-time) var(--motion-ease); transition-delay: var(--delay, 0ms); }
+    .reveal:focus-within { opacity: 1 !important; transform: none !important; transition: none; }
+    @media (max-width: 25rem) {
+      .hero-actions .button { padding-inline: .78rem; font-size: .81rem; }
+    }
+    @media (min-width: 38rem) {
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .review-stage { min-height: 13rem; }
+      .review-card { padding: 1.35rem; }
+    }
+    @media (min-width: 48rem) {
+      :root { --nav-height: 4.75rem; }
+      .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, .96fr); }
+      h1 { font-size: clamp(3.6rem, 7.75vw, 8.15rem); }
+      .hero-stage { height: clamp(23rem, 43vw, 39rem); }
+      .hero-frame { inset: .95rem; }
+      .faq-layout { grid-template-columns: .8fr 1.2fr; gap: clamp(1.5rem, 5vw, 5rem); }
+    }
+    @media (min-width: 64rem) {
+      .desktop-only { display: flex; }
+      .hamburger, .mobile-menu { display: none; }
+      .footer-grid { grid-template-columns: 1.1fr 1fr .65fr 1.3fr; }
+      .hero-copy .eyebrow { margin-bottom: 1.45rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+      .marquee-track, .intro-active .preloader, .intro-active .hero-word, .floating .whatsapp { animation: none; }
+      .js.reveal-ready .reveal:not(.is-visible) { opacity: 1; transform: none; }
+      .hero-slide .art, .hero-slide img { translate: none; }
+    }
+    :root {
+      --gutter: clamp(20px, 5vw, 64px);
+      --shadow: 0 4px 16px var(--pigment-51);
+      --bar-height: calc(72px + env(safe-area-inset-bottom, 0px));
+    }
+    body { font-size: clamp(17px, 1.4vw, 18px); line-height: 1.65; }
+    .wrap { width: min(100% - 2 * var(--gutter), 1200px); }
+    .section { padding-block: clamp(72px, 10vw, 140px); position: relative; border-top: 1px solid var(--line); }
+    .section::before {
+      content: ""; position: absolute; top: -5px; left: max(var(--gutter), calc((100% - 1200px) / 2));
+      width: 9px; height: 9px; background: var(--accent); rotate: 45deg; pointer-events: none;
+    }
+    .section-head { gap: 0; margin-bottom: clamp(40px, 5vw, 64px); }
+    .section-head .eyebrow { margin-bottom: 16px; }
+    .section-head > .lede, .section-head h2 + .lede { margin-top: 24px; }
+    .section-head .head-row { gap: 16px 24px; }
+    .section-head .head-row > .lede { max-width: min(34ch, 100%); }
+    .lede, .answer, .bridal-callout p, .promise-list p { max-width: 62ch; }
+    h1, h2, h3 { text-wrap: balance; }
+    h1 { font-size: clamp(2.6rem, 7.55vw, 6rem); line-height: .94; }
+    h2 { font-size: clamp(3rem, 6.4vw, 5.6rem); }
+    h3 { font-size: clamp(1.8rem, 3.2vw, 2.65rem); }
+    .hero-copy > .eyebrow { margin-bottom: 16px; }
+    .hero-copy .lede { margin-top: 24px; max-width: 38ch; font-size: inherit; }
+    .hero-actions { margin-top: 24px; }
+    .button, .icon-button { min-height: 44px; }
+    .button.primary { box-shadow: none; }
+    .icon-button { width: 44px; }
+    .nav-links a, .footer-links a, .text-link, .footer address a {
+      display: inline-flex; align-items: center; min-height: 44px;
+    }
+    .nav-actions .button { min-height: 44px; }
+    .nav-actions .button.desktop-only { display: none; }
+    
+    .rating-strip {
+      display: grid; justify-items: start; gap: 0 16px; border-top: 1px solid var(--line);
+      margin-top: 24px; padding-top: 8px; font-size: .82rem; color: var(--muted);
+    }
+    .rating-strip > div { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .rating-strip > div > .icon { color: var(--accent); fill: currentColor; }
+    .hours-badge {
+      display: inline-block; border: 1px solid var(--line); border-radius: 99px; padding: 4px 8px;
+      color: var(--accent); font-size: .75rem; font-weight: 600;
+    }
+    .announcement { background: var(--deep); color: var(--ivory); --focus: var(--ivory); }
+    .announcement .wrap { min-height: 44px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .announcement p { font-size: .85rem; }
+    .announcement .icon-button { border-color: transparent; }
+    .announcement .icon-button:hover { background: var(--wine); }
+    .reels-section, .reviews, .team-section, .booking-section, .social { background: var(--alt); }
+    .services-section, .promise-section, .comparison-section, .gallery, #faq { background: var(--page); }
+    .reel-viewport {
+      --reel-width: min(78vw, 330px);
+      position: relative; height: clamp(360px, 103vw, 470px); perspective: 1000px; isolation: isolate;
+      overflow: clip; touch-action: pan-y; cursor: grab; user-select: none;
+    }
+    .reel-viewport.is-dragging { cursor: grabbing; }
+    .reel-card {
+      position: absolute; inset: 8px auto 8px 50%; width: var(--reel-width);
+      transform: translateX(calc(-50% + var(--shift))) translateZ(var(--depth)) rotateY(var(--tilt)) scale(var(--reel-scale));
+      z-index: var(--layer); transform-origin: center; transition: transform 640ms var(--motion-ease), opacity 480ms var(--motion-ease);
+      opacity: var(--reel-opacity); backface-visibility: hidden; min-width: 0;
+    }
+    .reel-viewport.is-dragging .reel-card { transition: none; }
+    .reel-link { position: relative; display: block; height: 100%; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--wine); color: var(--ivory); }
+    .reel-link:focus-visible { outline-offset: -5px; outline-color: var(--ivory); }
+    .reel-card.is-active .reel-link { border-color: var(--accent); }
+    .reel-card video, .reel-card .media-placeholder, .reel-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .reel-card video { visibility: hidden; }
+    .reel-card.is-playing video { visibility: visible; }
+    .reel-copy {
+      position: absolute; inset: auto 0 0; z-index: 1; padding: 40px 20px 20px; display: grid; gap: 8px;
+      background: linear-gradient(transparent, var(--pigment-52) 62%); pointer-events: none;
+    }
+    .reel-copy strong { font: 600 2rem/1 var(--display); }
+    .reel-copy .micro { max-width: 28ch; }
+    .reel-card-tag {
+      position: absolute; z-index: 2; top: 16px; left: 16px; color: var(--ivory);
+      background: var(--wine); border-color: var(--gold); --focus: var(--ivory);
+    }
+    .reel-card-tag:hover { background: var(--deep) !important; color: var(--ivory); }
+    .reel-controls, .reel-dots { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; }
+    .reel-controls { margin-top: 16px; }
+    .reel-dot { display: grid; place-items: center; padding: 0; border: 0; background: transparent; }
+    .reel-dot::before { content: ""; width: 8px; height: 8px; border: 1px solid var(--accent); border-radius: 50%; }
+    .reel-dot[aria-current="true"]::before { background: var(--accent); }
+    .reel-sound {
+      position: absolute; z-index: 10; top: 24px;
+      right: calc((100% - var(--reel-width)) / 2 + 16px);
+      color: var(--ivory); background: var(--wine); border-color: var(--gold); --focus: var(--ivory);
+    }
+    .reel-sound:hover { background: var(--deep) !important; color: var(--ivory); }
+    .service-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .service-filters .button[aria-pressed="true"] { background: var(--crimson); border-color: var(--crimson); color: var(--ivory); }
+    .service-filters .button[aria-pressed="true"]:hover { background: var(--deep); }
+    .editorial-services { display: grid; gap: 32px 24px; align-items: start; }
+    .service-entry { min-width: 0; border-bottom: 1px solid var(--line); }
+    .service-photo { border-radius: var(--radius); overflow: hidden; aspect-ratio: 1; background: var(--alt); isolation: isolate; }
+    .service-entry.tall .service-photo { aspect-ratio: 4/4.5; }
+    .service-entry.wide .service-photo, .service-entry.featured .service-photo { aspect-ratio: 16/10; }
+    .media-placeholder { display: grid; place-content: center; min-width: 0; height: 100%; padding: 20px; text-align: center; background:
+      radial-gradient(ellipse at 70% 18%, var(--pigment-53), transparent 64%), linear-gradient(140deg, var(--pigment-54), var(--pigment-15) 89%); color: var(--ivory); }
+    .media-placeholder::after { display: none; }
+    .media-placeholder > span { position: relative; z-index: 1; display: block; padding: 8px 12px; border: 1px solid var(--pigment-55); border-radius: 6px; background: var(--pigment-56); line-height: 1.45; font-size: .79rem;  }
+    .media-placeholder img, .service-photo img, .team-photo img, .comparison-window img { width: 100%; height: 100%; object-fit: cover; }
+    .service-photo > * { transition: transform 760ms var(--motion-ease); }
+    .service-entry:active .service-photo { opacity: .85; }
+    .service-copy { padding-block: 24px 16px; }
+    .service-copy h3 { display: inline-block; }
+    .service-copy h3::after { display: block; content: ""; margin-top: 8px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform var(--motion-time) var(--motion-ease); }
+    .service-entry:focus-within h3::after { transform: scaleX(1); }
+    .service-copy p { margin-top: 8px; color: var(--muted); }
+    .service-meta { font-size: .85rem; }
+    .service-copy .text-link { margin-top: 8px; }
+    .price-guide { margin-top: 64px; max-width: 48rem; }
+    .price-guide .eyebrow { margin-bottom: 16px; }
+    .price-guide > .lede { margin: 16px 0 24px; }
+    .price-list .answer { padding-inline: 0; }
+    .price-list dl > div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding-block: 8px; border-top: 1px solid var(--line); }
+    .price-list dl > div:first-child { border-top: 0; }
+    .price-list dd { font-size: .91em; }
+    .review-stage { overflow: clip; touch-action: pan-y; cursor: grab; }
+    .review-stage:active { cursor: grabbing; }
+    .review-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; transition: transform 640ms var(--motion-ease); }
+    .review-card { min-width: 0; min-height: 192px; display: grid; align-content: center; gap: 12px; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+    .review-card blockquote { color: var(--muted); }
+    .review-tag { color: var(--accent); }
+    .review-person { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; }
+    .review-controls { margin-top: 16px; }
+    .review-controls [data-review-count] { min-width: 65px; text-align: center; color: var(--muted); }
+    .promise-layout { display: grid; gap: 24px; }
+    .promise-layout .section-head { margin-bottom: 0; align-content: start; }
+    .promise-list, .steps-list { padding: 0; margin: 0; list-style: none; }
+    .promise-list li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; padding: 20px 0; border-top: 1px solid var(--line); }
+    .promise-list li:last-child { border-bottom: 1px solid var(--line); }
+    .promise-list li > span, .steps-list li > span { color: var(--accent); }
+    .promise-list p, .steps-list p, .team-card p { margin-top: 8px; color: var(--muted); }
+    .verified-stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 24px; border-block: 1px solid var(--line); padding-block: 20px; }
+    .verified-stats > div { display: flex; flex-direction: column; }
+    .verified-stats dd { order: -1; color: var(--accent); font: 600 clamp(2.6rem, 6vw, 4.8rem)/1 var(--display); }
+    .team-grid, .comparison-grid, .steps-list { display: grid; gap: 24px; }
+    .team-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--card); }
+    .team-photo { aspect-ratio: 5/4; background: var(--alt); }
+    .team-copy { padding: 20px; }
+    .comparison-window { position: relative; isolation: isolate; overflow: hidden; aspect-ratio: 4/3; border: 1px solid var(--line); border-radius: var(--radius); background: var(--alt); }
+    .comparison-layer { position: absolute; inset: 0; pointer-events: none; }
+    .comparison-before { clip-path: inset(0 calc(100% - var(--split, 50%)) 0 0); }
+    .comparison-layer .media-placeholder > span { position: absolute; bottom: 16px; width: max-content; max-width: calc(100% - 24px); }
+    .comparison-label { position: absolute; bottom: 12px; padding: 4px 8px; background: var(--wine); color: var(--ivory); border-radius: 4px; }
+    .comparison-before .media-placeholder > span, .comparison-before .comparison-label { left: 12px; }
+    .comparison-after .media-placeholder > span, .comparison-after .comparison-label { right: 12px; }
+    .comparison-after .media-placeholder { background: radial-gradient(ellipse at 70% 18%, var(--pigment-57), transparent 64%), linear-gradient(140deg, var(--pigment-58), var(--pigment-59) 89%); }
+    .comparison-range { position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
+    .comparison-handle { position: absolute; z-index: 2; inset: 0 auto 0 var(--split, 50%); width: 2px; background: var(--ivory); pointer-events: none; }
+    .comparison-handle .icon-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--ivory); color: var(--crimson); }
+    .comparison-range:focus-visible + .comparison-handle .icon-button { outline: 2px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px var(--ivory); }
+    .comparison-grid figcaption { padding: 12px 0 0; font-weight: 600; }
+    .steps-list li { border-top: 1px solid var(--line); padding-block: 16px; }
+    .steps-list h3 { margin-top: 8px; }
+    .bridal-callout { display: grid; gap: 24px; margin-top: 48px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+    .bridal-callout .eyebrow { margin-bottom: 16px; }
+    .bridal-callout .button { margin-top: 16px; }
+    .marquee-track { animation-duration: 84s; }
+    .marquee-track span { min-width: 100cqw; text-align: center; }
+    .social-card, .faq-list summary { padding-block: 20px; }
+    .social-card p { font-size: inherit; }
+    .footer-bottom { min-height: 64px; align-items: center; }
+    [data-hours] { white-space: pre-line; }
+    .mobile-book-bar { display: none; }
+    .cursor-petal { display: none; pointer-events: none; }
+    #booking { width: min(100% - 32px, 580px); padding: 0; overflow: hidden; }
+    .booking-inner { max-height: min(calc(100dvh - 34px), 760px); overflow-y: auto; padding: 24px; overscroll-behavior: contain; }
+    #booking .eyebrow { margin-right: 48px; }
+    #booking .dialog-heading { margin-top: 16px; }
+    .booking-fields { display: grid; gap: 12px 16px; }
+    .booking-form { display: grid; gap: 12px; }
+    .booking-form label { display: block; font-weight: 600; font-size: .92rem; }
+    .booking-form :is(input, select, textarea) { display: block; width: 100%; min-height: 44px; margin-top: 4px; border: 1px solid var(--accent); border-radius: 8px; background: var(--page); color: var(--text); padding: 8px 12px; font: inherit; font-weight: 400; }
+    .booking-form textarea { resize: vertical; }
+    .booking-form [aria-invalid="true"] { border-width: 2px; }
+    .optional, .field-error { font-size: .81rem; color: var(--accent); }
+    .field-error { display: block; margin-top: 4px; }
+    .booking-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 16px; }
+    .booking-fallback { margin: 0; }
+    @media (hover: hover) and (pointer: fine) {
+      .service-entry:hover .service-photo > img { transform: scale(1.065); }
+      .service-entry:hover h3::after { transform: scaleX(1); }
+      .cursor-petal.is-enabled {
+        display: block; position: fixed; z-index: 65; inset: 0 auto auto 0; width: 12px; height: 12px; opacity: 0;
+        background: var(--crimson); border-radius: 70% 5% 70% 5%; transition: opacity 400ms var(--motion-ease);
+      }
+      .cursor-petal.is-visible { opacity: .5; }
+    }
+    @media (min-width: 38rem) {
+      .rating-strip { grid-template-columns: auto 1fr; align-items: center; }
+      .editorial-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .service-entry.featured { grid-column: 1/-1; }
+      .team-grid, .comparison-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .booking-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 48rem) {
+      .editorial-services { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px 24px; }
+      .service-entry { grid-column: span 4; }
+      .service-entry.wide { grid-column: span 7; }
+      .service-entry.tall { grid-column: span 5; }
+      .service-entry.featured { display: grid; grid-template-columns: 1.55fr 1fr; gap: 24px; align-items: center; padding-bottom: 24px; }
+      .editorial-services.is-filtered .service-entry:not(.featured) { grid-column: span 6; }
+      .promise-layout { grid-template-columns: .9fr 1.1fr; gap: 48px; }
+      .team-grid, .steps-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .bridal-callout { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); margin-top: 112px; padding-block: 56px; }
+    }
+    @media (min-width: 64rem) {
+      .nav-actions .button.desktop-only { display: inline-flex; }
+      .nav-links { gap: clamp(8px, 1.45vw, 20px); }
+    }
+    @media (max-width: 47.999rem) {
+      html { scroll-padding-bottom: var(--bar-height); }
+      body { padding-bottom: var(--bar-height); }
+      .mobile-book-bar {
+        position: fixed; z-index: 75; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 8px;
+        inset: auto 0 0; padding: 12px max(20px, env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
+        border-top: 1px solid var(--line); background: var(--page);
+      }
+      .mobile-book-bar .button { min-width: 0; height: 47px; padding-block: 0; }
+      body:has(#booking[open]) .mobile-book-bar, body.menu-open .mobile-book-bar { visibility: hidden; }
+      .floating { bottom: calc(var(--bar-height) + 8px); }
+      .floating .whatsapp { display: none; }
+      #booking { position: fixed; inset: auto 0 0; margin: 0; width: 100%; max-width: none; max-height: min(90dvh, 720px); border-radius: 20px 20px 0 0; }
+      .booking-inner { max-height: min(calc(90dvh - 2px), 718px); padding: 20px 20px calc(24px + env(safe-area-inset-bottom, 0px)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cursor-petal, .cursor-petal.is-enabled { display: none; }
+      .service-entry:hover .service-photo > * { scale: 1; }
+    }
+
+    html, body { overflow-x: clip; }
+    body { font-size: 17px; line-height: 1.65; }
+    .wrap { width: min(1200px, calc(100% - var(--gutter) * 2)); }
+    .section { padding-block: clamp(72px, 10vw, 140px); }
+    h1, h2, h3 { overflow-wrap: break-word; min-width: 0; }
+    :is(button, input, select, textarea):disabled { opacity: .55; cursor: not-allowed; }
+    .site-header { isolation: isolate; margin-bottom: calc(-1 * var(--nav-height)); }
+    .site-header .nav-bar { border: 0; }
+    .site-header::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; pointer-events: none; background: color-mix(in srgb, var(--page) 94%, transparent); backdrop-filter: blur(16px); box-shadow: 0 3px 12px var(--pigment-51); transition: opacity 480ms var(--motion-ease); }
+    .site-header.scrolled, .menu-open .site-header { background: transparent; backdrop-filter: none; box-shadow: none; }
+    .site-header.scrolled::before, .menu-open .site-header::before { opacity: 1; }
+    body:not(.menu-open) .site-header:not(.scrolled) { color: var(--ivory); --focus: var(--ivory); }
+    body:not(.menu-open) .site-header:not(.scrolled) :is(.brand, .theme-toggle, .hamburger, .nav-links a) { color: var(--ivory); }
+    body:not(.menu-open) .site-header:not(.scrolled) .icon-button:hover { background: var(--deep); }
+    .hero { scroll-margin-top: calc(-1 * var(--nav-height)); }
+    .hero-stage::after { content: ""; position: absolute; inset: 0 0 auto; height: 112px; background: linear-gradient(var(--pigment-60), transparent); pointer-events: none; }
+    .hero-dashes { display: flex; gap: 8px; }
+    .hero-dash { display: block; position: relative; width: 24px; height: 2px; background: color-mix(in srgb, var(--ivory) 35%, transparent); }
+    .hero-dash::after { content: ""; position: absolute; inset: 0; background: var(--ivory); transform-origin: left; transform: scaleX(0); }
+    .hero-dash.is-current::after { transform: scaleX(1); }
+    .hero-dash.is-current.is-running::after { animation: dash-progress 5s linear both; }
+    @keyframes dash-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    .hero-slide.is-active img { animation: ken-burns 14s var(--motion-ease) both; }
+    @keyframes ken-burns { from { transform: scale(1); } to { transform: scale(1.06); } }
+    .intro-active .preloader { visibility: visible; animation: intro-lift 1000ms var(--motion-ease) both; }
+    .intro-active .preloader .wordmark { animation: word-rise 440ms var(--motion-ease) both; }
+    .intro-active .hero-word { animation: word-rise 560ms var(--motion-ease) both; animation-delay: calc(480ms + var(--word) * 72ms); }
+    .intro-active .hero-copy .lede, .intro-active .hero-actions { animation: word-rise 560ms var(--motion-ease) both; animation-delay: 1040ms; }
+    .intro-active .hero-actions { animation-delay: 1120ms; }
+    @keyframes intro-lift {
+      0%, 42% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-8%); }
+    }
+    @keyframes word-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .button::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: currentColor; opacity: 0; transform-origin: left; transform: scaleX(0); pointer-events: none; transition: transform var(--motion-time) var(--motion-ease), opacity var(--motion-time) var(--motion-ease); }
+    .button { isolation: isolate; }
+    .button:active { scale: .975; }
+    .floating .whatsapp, .mobile-book-bar .primary { animation: whatsapp-breathe 4.8s var(--motion-ease) 2s infinite; }
+    @keyframes whatsapp-breathe { 0%, 75%, 100% { transform: scale(1); } 85% { transform: scale(1.045); } }
+    .gallery-photo { transition: transform 760ms var(--motion-ease); }
+    .service-photo > img, .gallery-tile .gallery-photo { translate: 0 var(--image-drift, 0px); scale: 1.045; }
+    .gallery-tile > .art { overflow: hidden; }
+    @media (hover: hover) and (pointer: fine) {
+      .button:hover::before { opacity: .13; transform: scaleX(1); }
+      .gallery-tile:hover .gallery-photo, .gallery-tile:hover .artwork { transform: scale(1.065); }
+    }
+    dialog[open] { animation: dialog-in 480ms var(--motion-ease) both; }
+    @keyframes dialog-in { from { opacity: 0; transform: translateY(12px) scale(.975); } to { opacity: 1; transform: none; } }
+    @keyframes sheet-in { from { opacity: 0; transform: translateY(48px); } to { opacity: 1; transform: none; } }
+    @media (max-width: 47.999rem) {
+      #booking[open] { animation-name: sheet-in; }
+    }
+    .hero { isolation: isolate; display: grid; align-items: end; min-height: min(960px, 100svh); padding-block: 96px 104px; background: var(--deep); color: var(--ivory); --focus: var(--ivory); }
+    .hero-grid { display: block; }
+    .hero-visual { position: absolute; inset: 0; z-index: -1; }
+    .hero-stage { position: absolute; inset: 0; min-height: 0; height: 100%; border-radius: 0; box-shadow: none; }
+    .hero-slide .art, .hero-slide img { inset: 0; height: 100%; translate: 0 var(--drift, 0px); }
+    .hero-slide:not(:has(img)) { background: var(--deep); }
+    .hero-slide img { object-position: center 43%; }
+    .hero-slide:has(img)::after { background: linear-gradient(90deg, var(--pigment-60), var(--pigment-61) 44%, var(--pigment-62) 76%), linear-gradient(0deg, var(--pigment-63), transparent 34%); }
+    .hero-monogram, .hero-frame { display: none; }
+    .hero-copy { pointer-events: none; }
+    .hero-copy a { pointer-events: auto; }
+    .hero h1 { font-size: clamp(3.4rem, 8.1vw, 7.6rem); line-height: .88; }
+    .hero .lede { color: var(--ivory); }
+    .hero .button:not(.primary) { color: var(--ivory); border-color: var(--ivory); background: transparent; }
+    .hero .button:not(.primary):hover { color: var(--ink); background: var(--ivory); }
+    .hero .button.primary { background: var(--ivory); border-color: var(--ivory); color: var(--deep); }
+    .hero .button.primary:hover { background: var(--sand); border-color: var(--sand); }
+    .hero-controls { position: absolute; inset: auto var(--gutter) 24px; color: var(--ivory); pointer-events: none; }
+    .hero-controls button { color: var(--ivory); pointer-events: auto; }
+    .hero-controls button:hover { color: var(--deep); background: var(--ivory); }
+    .hero-controls .slide-count { color: var(--ivory); }
+    .reels-section .wrap { display: grid; grid-template-columns: minmax(0, 1fr); }
+    .reel-viewport { height: clamp(408px, 109vw, 560px); }
+    .reel-link { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; padding: 24px; text-align: center; border-radius: 4px; background: repeating-radial-gradient(ellipse at 50% 75%, transparent 0 24px, var(--pigment-64) 25px, transparent 26px 44px), var(--deep); }
+    .reel-link strong { font: 600 clamp(2.3rem, 5vw, 4rem)/1 var(--display); }
+    .reel-link .icon { width: 28px; height: 28px; }
+    .reel-embed { visibility: hidden; position: absolute; inset: 0 0 56px; overflow: auto; background: var(--ivory); }
+    .reel-embed iframe, .instagram-media { width: 100% !important; min-width: 0 !important; margin: 0 !important; }
+    .reel-card.has-embed .reel-embed { visibility: visible; }
+    .reel-card:not(.is-active) .reel-embed { pointer-events: none; }
+    .reel-card.has-embed .reel-link { justify-content: end; padding: 8px; }
+    .reel-card.has-embed .reel-link > strong, .reel-card.has-embed .reel-link > .icon { visibility: hidden; }
+    .reel-follow { margin-top: 24px; }
+    .service-filters .button { border-radius: 2px; }
+    .service-photo { border-radius: 2px; position: relative; }
+    .stock-caption { position: absolute; inset: auto 8px 8px auto; background: var(--ivory); color: var(--ink); padding: 4px 8px; font-size: .8rem; }
+    .service-copy h3 { font-size: clamp(1.8rem, 3.6vw, 3rem); }
+    .service-entry.featured .service-photo { aspect-ratio: 5/4; }
+    .service-entry.featured img { object-position: center 43%; }
+    .media-placeholder { background: repeating-radial-gradient(ellipse at 50% 78%, transparent 0 24px, var(--pigment-64) 25px, transparent 26px 44px), var(--deep); }
+    .media-placeholder > span { background: var(--deep); font-size: .875rem; }
+    .comparison-after .media-placeholder { background: repeating-radial-gradient(ellipse at 50% 78%, transparent 0 24px, var(--pigment-65) 25px, transparent 26px 44px), var(--sand); }
+    .review-card { padding-inline: 0; background: transparent; border-inline: 0; border-radius: 0; }
+    .reviews .rating-strip { margin-bottom: 24px; }
+    .gallery-photo { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+    [data-lightbox-art] .gallery-photo { aspect-ratio: auto; max-height: 66dvh; object-fit: contain; }
+    details:not([open]) > :not(summary) { display: none; }
+    .price-list dd { font-variant-numeric: tabular-nums; }
+    .footer-grid > * { min-width: 0; }
+    .photo-credits { padding-bottom: 16px; font-size: .875rem; overflow-wrap: anywhere; }
+    .photo-credits a { text-decoration: underline; }
+    .photo-credits a { white-space: nowrap; }
+    .service-copy .text-link { font-size: .875rem; white-space: nowrap; }
+    .social-card > .icon, .social-card > p, .social .lede { display: none; }
+    .social-card { box-shadow: none; min-height: 128px; }
+    dialog { box-shadow: none; }
+    .footer-grid { row-gap: 64px; }
+    .photo-credits summary { min-height: 44px; cursor: pointer; }
+    .map iframe { min-height: 208px; }
+    .map-caption { font-size: .875rem; margin-bottom: 8px; }
+    .team-photo:has(.media-placeholder) { aspect-ratio: 16/9; }
+    .comparison-window:has(.media-placeholder) { aspect-ratio: 16/10; }
+    .gallery-tile > .art { height: clamp(180px, 32vw, 272px); }
+    .marquee-track { animation-play-state: paused; }
+    .marquees.in-view:not(.is-paused) .marquee-track { animation-play-state: running; }
+    .marquees:is(:hover,:focus-within) .marquee-track { animation-play-state: paused !important; }
+    @media (min-width: 48rem) {
+      .social-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, .8fr); }
+      .service-entry.featured { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); }
+      .service-entry:nth-child(n+4) { grid-column: span 6; }
+      .reels-section .wrap { grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 0 24px; }
+      .reels-section .section-head { align-self: end; }
+      .reels-section .head-row { display: block; }
+      .reels-section .lede { margin-top: 16px; }
+      .reel-viewport { grid-column: 2; grid-row: 1 / span 3; }
+      .reel-controls { grid-column: 2; grid-row: 4; }
+      .reel-follow { grid-column: 1; grid-row: 2; align-self: start; }
+    }
+    @media (max-width: 47.999rem) {
+      .hero { min-height: 620px; padding-block: 80px 104px; }
+      .hero-slide:has(img)::after { background: linear-gradient(0deg, var(--pigment-66) 1%, var(--pigment-67) 46%, var(--pigment-68) 100%); }
+      .floating { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .marquee-track, .hero-slide.is-active img, .hero-dash.is-current.is-running::after,
+      .floating .whatsapp, .mobile-book-bar .primary, dialog[open],
+      .intro-active .preloader, .intro-active .preloader .wordmark,
+      .intro-active .hero-word, .intro-active .hero-copy .lede, .intro-active .hero-actions { animation: none !important; }
+      .intro-active .preloader { visibility: hidden; }
+      .hero-slide img, .service-photo > img, .gallery-tile .gallery-photo { translate: none; }
+      .scroll-progress { display: none; }
+    }
+
+    .hero-slide { overflow: clip; background: var(--deep); }
+    .hero-slide:nth-child(2):not(:has(img)) { background: var(--crimson); }
+    .hero-slide:nth-child(3):not(:has(img)) { background: var(--wine); }
+    #bridal-wallpaper { color: var(--gold); }
+    .hero-wallpaper {
+      position: absolute; inset: -8%; width: 116%; height: 116%;
+      color: var(--gold); opacity: .55;
+    }
+    .hero-slide:nth-child(2) .hero-wallpaper { color: var(--sand); opacity: .48; }
+    .hero-slide:nth-child(3) .hero-wallpaper { color: var(--ivory); opacity: .41; }
+    .hero-slide.is-active .hero-wallpaper { animation: wallpaper-drift 12s var(--motion-ease) both; }
+    .hero-visual:has([data-hero-pause][aria-label^="Play"]) .hero-wallpaper { animation-play-state: paused; }
+    .hero-slide::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(90deg, var(--wine), var(--pigment-61) 48%, transparent 90%),
+                  linear-gradient(0deg, var(--wine), transparent 42%);
+    }
+    @keyframes wallpaper-drift {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(2%, -2%, 0) scale(1.075); }
+    }
+    @media (max-width: 47.999rem) {
+      .hero-slide::after {
+        background: linear-gradient(0deg, var(--wine) 8%, var(--pigment-61) 58%, transparent);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-slide.is-active .hero-wallpaper { animation: none; }
+    }
+    .service-photo .media-placeholder { isolation: isolate; overflow: clip; position: relative; text-align: center; }
+    .service-photo .media-placeholder::after { content: ""; display: block; position: absolute; inset: 8%; border: 1px solid var(--pigment-64); border-radius: 50% 50% 4px 4px; transform: scale(.91); transition: transform 720ms var(--motion-ease), opacity 720ms var(--motion-ease); opacity: .7; }
+    .service-photo .media-placeholder > span { background: transparent; border: 0; font: 500 clamp(1.8rem, 4vw, 3.8rem)/1 var(--display); transition: transform 720ms var(--motion-ease); }
+    .service-entry:is(:hover,:focus-within) .media-placeholder::after { transform: scale(1); opacity: 1; }
+    .service-entry:is(:hover,:focus-within) .media-placeholder > span { transform: translateY(-8px); }
+    .review-stage { perspective: 960px; padding-block: 16px; }
+    .review-track { display: grid; grid-template-columns: minmax(0, 1fr); grid-auto-flow: row; justify-items: center; isolation: isolate; }
+    .review-card { grid-area: 1 / 1; width: min(76%, 568px); position: relative; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); color: var(--text); padding: clamp(16px, 4vw, 40px); opacity: var(--review-opacity, 1); transform: perspective(960px) translateX(var(--review-offset, 0%)) rotateY(var(--review-tilt, 0deg)) scale(var(--review-scale, 1)); transition: transform 720ms var(--motion-ease), opacity 560ms var(--motion-ease); }
+    .review-card[aria-hidden="false"] .review-person { animation: word-rise 560ms var(--motion-ease) both; }
+    @media (prefers-reduced-motion: reduce) {
+      .review-card[aria-hidden="false"] .review-person { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <svg class="sr-only" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2c0 6-4 10-10 10 6 0 10 4 10 10 0-6 4-10 10-10-6 0-10-4-10-10Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M20 12H5m6 6-6-6 6-6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V5m-6 6 6-6 6 6"/></symbol>
+    <symbol id="i-out" viewBox="0 0 24 24"><path d="M6 18 18 6M8 6h10v10"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 6.4 7 .8-5.2 4.8 1.5 7-6.3-3.5L5.7 21l1.5-7L2 9.2l7-.8Z"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.6 15.1A9 9 0 0 1 8.9 3.4a9 9 0 1 0 11.7 11.7Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M19 5l-1.5 1.5m-11 11L5 19"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14m6-14v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M8 3 5 4c-2 1 0 7 3 11s9 7 11 5l2-3-5-3-2 2c-3-2-5-4-6-7l2-2-2-4Z"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Zm12 0a4 4 0 0 1 0 6m2-9a8 8 0 0 1 0 12"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.7" r=".7" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 6a9 9 0 0 0-14.9 9.8L4 21l5.3-1.5A9 9 0 0 0 20.5 6Z"/><path d="M9.2 8.2c-1.6 1.2.1 4 1.7 5.5s4.1 2.8 5.3 1c.4-.6-.3-1-1.5-1.6-.5-.2-.8.6-1.2.5-1.4-.5-2.5-1.7-3-2.8-.2-.4.6-.8.4-1.2-.4-1-.9-1.8-1.7-1.4Z"/></symbol>
+    <defs>
+      <g id="wall-leaf">
+        <path d="M0 0Q11-23 32-20Q22-2 0 0Z" fill="currentColor" fill-opacity=".17"/>
+        <path d="M0 0Q15-10 27-17"/>
+      </g>
+      <g id="wall-flower">
+        <path d="M0-8C-13-13-11-31 0-34C11-31 13-13 0-8Z" fill="currentColor" fill-opacity=".24"/>
+        <path d="M8-3C8-19 28-21 33-10C34 1 17 8 8-3Z" fill="currentColor" fill-opacity=".2"/>
+        <path d="M5 7C20 4 30 19 21 27C11 33 2 20 5 7Z" fill="currentColor" fill-opacity=".24"/>
+        <path d="M-5 7C-2 20-11 33-21 27C-30 19-20 4-5 7Z" fill="currentColor" fill-opacity=".2"/>
+        <path d="M-8-3C-17 8-34 1-33-10C-28-21-8-19-8-3Z" fill="currentColor" fill-opacity=".24"/>
+        <circle r="7" fill="currentColor" fill-opacity=".4"/>
+        <circle r="2" fill="currentColor" stroke="none"/>
+      </g>
+      <pattern id="bridal-wallpaper" width="216" height="248" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M108 0C108 31 169 38 177 70C192 124 136 148 108 186C91 208 108 229 108 248M108 0C108 31 47 38 39 70C24 124 80 148 108 186C125 208 108 229 108 248" opacity=".8"/>
+          <path d="M39 79C17 85 7 105 12 125C16 146 38 151 45 139C49 131 41 123 35 129M177 79C199 85 209 105 204 125C200 146 178 151 171 139C167 131 175 123 181 129M108 186C83 168 48 175 43 195C40 210 55 219 63 210M108 186C133 168 168 175 173 195C176 210 161 219 153 210"/>
+          <use href="#wall-leaf" transform="translate(65 47) rotate(-19)"/>
+          <use href="#wall-leaf" transform="translate(151 47) scale(-1 1) rotate(-19)"/>
+          <use href="#wall-leaf" transform="translate(47 117) rotate(-33)"/>
+          <use href="#wall-leaf" transform="translate(169 117) scale(-1 1) rotate(-33)"/>
+          <use href="#wall-leaf" transform="translate(87 164) rotate(-65) scale(.85)"/>
+          <use href="#wall-leaf" transform="translate(129 164) scale(-1 1) rotate(-65) scale(.85)"/>
+          <use href="#wall-flower" transform="translate(108 101)"/>
+          <use href="#wall-flower" transform="translate(36 78) rotate(-20) scale(.56)"/>
+          <use href="#wall-flower" transform="translate(180 78) rotate(20) scale(.56)"/>
+          <use href="#wall-flower" transform="translate(108 221) rotate(36) scale(.52)"/>
+          <path d="M108 38l4 6-4 6-4-6ZM26 180l3 5-3 5-3-5ZM190 180l3 5-3 5-3-5Z" fill="currentColor" fill-opacity=".45"/>
+        </g>
+      </pattern>
+    </defs>
+    <symbol id="art-arch" viewBox="0 0 400 430">
+      <path d="M62 408V159a138 138 0 0 1 276 0v249M75 408V159a125 125 0 0 1 250 0v249M89 408V159a111 111 0 0 1 222 0v249M103 408V159a97 97 0 0 1 194 0v249M117 408V159a83 83 0 0 1 166 0v249"/>
+      <ellipse cx="200" cy="232" rx="160" ry="65" transform="rotate(-27 200 232)"/>
+      <ellipse cx="200" cy="232" rx="160" ry="76" transform="rotate(-27 200 232)"/>
+      <path d="M307 99c0 20-12 31-31 31 19 0 31 11 31 31 0-20 12-31 31-31-19 0-31-11-31-31ZM100 280c0 14-8 22-22 22 14 0 22 8 22 22 0-14 8-22 22-22-14 0-22-8-22-22Z"/>
+    </symbol>
+    <symbol id="art-ribbon" viewBox="0 0 400 430">
+      <ellipse cx="200" cy="211" rx="148" ry="65" transform="rotate(-41 200 211)"/>
+      <ellipse cx="200" cy="211" rx="151" ry="79" transform="rotate(-34 200 211)"/>
+      <ellipse cx="200" cy="211" rx="155" ry="93" transform="rotate(-27 200 211)"/>
+      <ellipse cx="200" cy="211" rx="158" ry="107" transform="rotate(-20 200 211)"/>
+      <ellipse cx="200" cy="211" rx="161" ry="122" transform="rotate(-13 200 211)"/>
+      <ellipse cx="200" cy="211" rx="164" ry="138" transform="rotate(-6 200 211)"/>
+      <path d="M286 82c0 17-10 27-27 27 17 0 27 10 27 27 0-17 10-27 27-27-17 0-27-10-27-27Z"/>
+    </symbol>
+    <symbol id="art-petal" viewBox="0 0 400 430">
+      <ellipse cx="200" cy="214" rx="60" ry="166"/><ellipse cx="200" cy="214" rx="60" ry="166" transform="rotate(30 200 214)"/>
+      <ellipse cx="200" cy="214" rx="60" ry="166" transform="rotate(60 200 214)"/><ellipse cx="200" cy="214" rx="60" ry="166" transform="rotate(90 200 214)"/>
+      <ellipse cx="200" cy="214" rx="60" ry="166" transform="rotate(120 200 214)"/><ellipse cx="200" cy="214" rx="60" ry="166" transform="rotate(150 200 214)"/>
+      <circle cx="200" cy="214" r="183"/><circle cx="200" cy="214" r="174"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="preloader" aria-hidden="true">
+    <svg class="icon"><use href="#i-spark"></use></svg><span class="wordmark">Shiza Salon</span>
+  </div>
+  <aside class="announcement" data-announcement hidden>
+    <div class="wrap"><p data-announcement-text></p><button class="icon-button" type="button" data-dismiss-announcement aria-label="Dismiss announcement"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></div>
+  </aside>
+  <header class="site-header">
+    <div class="wrap nav-bar">
+      <a href="#home" class="brand"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg><span class="wordmark">Shiza Salon</span></a>
+      <nav class="nav-links desktop-only" aria-label="Primary navigation">
+        <a href="#home">Home</a><a href="#reels">Reels</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#gallery">Gallery</a><a href="#why">Why Us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme"><svg class="icon" aria-hidden="true"><use href="#i-moon"></use></svg></button>
+        <a class="button primary desktop-only" href="#contact" data-book>Book on WhatsApp</a>
+        <button class="icon-button hamburger" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" inert>
+    <div class="wrap">
+      <a href="#home">Home</a><a href="#reels">Reels</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#gallery">Gallery</a><a href="#why">Why Us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      <a class="button primary" href="#contact" data-book>Book on WhatsApp</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          
+          <h1 id="hero-title"><span class="hero-word" style="--word:0">Makeup</span> <span class="hero-word" style="--word:1">for</span> <span class="hero-word" style="--word:2">your</span><br><span class="hero-word" style="--word:3">mehndi,</span> <span class="hero-word" style="--word:4">barat</span><br><span class="hero-word" style="--word:5">and</span> <span class="hero-word" style="--word:6">walima.</span></h1>
+          <p class="lede">Bridal makeup and hair styling at Shiza Salon in Gujranwala.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact" data-book>Book on WhatsApp</a>
+            <a class="button" href="#reels">See the reels</a>
+          </div>
+
+        </div>
+        <div class="hero-visual" role="region" aria-roledescription="carousel" aria-label="Featured salon looks" data-hero>
+          <div class="hero-stage" data-hero-stage>
+            <div class="hero-slide is-active" aria-hidden="false" data-label="Trailing blossoms" data-bridal-hero>
+              <svg class="hero-wallpaper" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#bridal-wallpaper)"/></svg>
+            </div>
+            <div class="hero-slide" aria-hidden="true" data-label="Embroidered vines">
+              <svg class="hero-wallpaper" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#bridal-wallpaper)"/></svg>
+            </div>
+            <div class="hero-slide" aria-hidden="true" data-label="Garden damask">
+              <svg class="hero-wallpaper" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#bridal-wallpaper)"/></svg>
+            </div>
+            <span class="hero-monogram" aria-hidden="true">SS</span>
+            <div class="hero-frame"></div>
+
+          </div>
+          <div class="hero-controls">
+            <div class="slide-count micro" aria-hidden="true"><span data-hero-count>01</span><span class="hero-dashes" data-hero-dashes></span><span>03</span></div>
+            <span class="sr-only" data-hero-status aria-live="polite"></span>
+            <div class="carousel-controls">
+              <button class="icon-button" type="button" data-hero-prev aria-label="Previous featured look"><svg class="icon" aria-hidden="true"><use href="#i-left"></use></svg></button>
+              <button class="icon-button" type="button" data-hero-pause aria-label="Pause featured looks"><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg></button>
+              <button class="icon-button" type="button" data-hero-next aria-label="Next featured look"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reels-section" id="reels" aria-labelledby="reels-title" data-reels>
+      <div class="wrap">
+        <header class="section-head reveal">
+          
+          <div class="head-row"><h2 id="reels-title">The salon in motion.</h2><p class="lede" data-reels-intro>Reel links are pending. Visit our Instagram profile for updates.</p></div>
+        </header>
+        <div class="reel-viewport" data-reel-viewport role="region" aria-label="Instagram reels" aria-roledescription="carousel" tabindex="0">
+          <button class="icon-button reel-sound" type="button" data-reel-sound aria-label="Unmute reel" hidden><svg class="icon" aria-hidden="true"><use href="#i-volume"></use></svg></button>
+        </div>
+        <div class="reel-controls">
+          <button class="icon-button" type="button" data-reel-prev aria-label="Previous reel"><svg class="icon" aria-hidden="true"><use href="#i-left"></use></svg></button>
+          <div class="reel-dots" data-reel-dots aria-label="Choose a reel"></div>
+          <button class="icon-button" type="button" data-reel-next aria-label="Next reel"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+          <button class="icon-button" type="button" data-reel-pause aria-label="Pause reels"><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg></button>
+        </div>
+        <p class="reel-follow"><a class="button" href="https://www.instagram.com/shiza_salon/" target="_blank" rel="noopener">Follow @shiza_salon</a></p>
+        <p class="sr-only" data-reel-status aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          
+          <div class="head-row"><h2 id="services-title">The salon menu</h2><p class="lede">Find your service, then message us for availability and pricing.</p></div>
+        </header>
+        <div class="service-filters" data-service-filters role="group" aria-label="Filter services by category"></div>
+        <p class="sr-only" data-filter-status aria-live="polite"></p>
+        <div class="editorial-services" data-services></div>
+        <div class="price-guide reveal">
+          
+          <h3>Prices by category</h3>
+          <p class="lede">Ask for a quote when a starting price is listed as on request.</p>
+          <div class="faq-list price-list" data-prices></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquees" data-marquees>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>SHIZA SALON ✦ GUJRANWALA, PAKISTAN ✦ BRIDAL MAKEUP ✦ HAIR STYLING ✦</span><span>SHIZA SALON ✦ GUJRANWALA, PAKISTAN ✦ BRIDAL MAKEUP ✦ HAIR STYLING ✦</span></div></div>
+      <div class="marquee dark" aria-hidden="true"><div class="marquee-track"><span>MEHNDI ✦ BARAT ✦ WALIMA ✦ APPOINTMENTS VIA WHATSAPP ✦ GUJRANWALA ✦</span><span>MEHNDI ✦ BARAT ✦ WALIMA ✦ APPOINTMENTS VIA WHATSAPP ✦ GUJRANWALA ✦</span></div></div>
+      <button class="icon-button marquee-pause" type="button" aria-label="Pause scrolling banners" data-marquee-pause><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg></button>
+    </div>
+
+    <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          
+          <div class="head-row"><h2 id="reviews-title">Google reviews</h2><a class="text-link" data-google href="https://share.google/XXqeTulvmb62hRuFP" target="_blank" rel="noopener">Read reviews on Google <svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></a></div>
+          <p class="lede" data-review-intro>Approved client reviews will appear here.</p>
+        </header>
+          <div class="rating-strip">
+            <div><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg> <strong data-rating>Google rating pending</strong> <span data-rating-count></span></div>
+            <a class="text-link" data-google href="https://share.google/XXqeTulvmb62hRuFP" target="_blank" rel="noopener">Read reviews on Google <svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></a>
+          </div>
+          <p class="hours-badge" data-open-status>Opening hours pending</p>
+        <div role="region" aria-roledescription="carousel" aria-label="Google reviews" tabindex="0">
+          <div class="review-stage" data-review-stage>
+            <div class="review-track" data-review-track></div>
+          </div>
+          <div class="review-controls carousel-controls">
+            <button class="icon-button" type="button" data-review-prev aria-label="Previous review"><svg class="icon" aria-hidden="true"><use href="#i-left"></use></svg></button>
+            <span class="micro" data-review-count aria-hidden="true"></span>
+            <button class="icon-button" type="button" data-review-next aria-label="Next review"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+            <button class="icon-button" type="button" data-review-pause aria-label="Pause reviews"><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg></button>
+            <span class="sr-only" data-review-status aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section promise-section" id="why" aria-labelledby="why-title">
+      <div class="wrap promise-layout">
+        <header class="section-head reveal">
+          
+          <h2 id="why-title">Our promise.</h2>
+          <p class="lede" data-promise-intro>The salon will confirm these details before publication.</p>
+        </header>
+        <ol class="promise-list" data-promises></ol>
+        <dl class="verified-stats" data-stats hidden></dl>
+      </div>
+    </section>
+
+    <section class="section team-section" id="team" aria-labelledby="team-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          
+          <h2 id="team-title">Meet the team.</h2>
+        </header>
+        <div class="team-grid" data-team></div>
+      </div>
+    </section>
+
+    <section class="section comparison-section" id="transformations" aria-labelledby="comparison-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          
+          <div class="head-row"><h2 id="comparison-title">Before &amp; after.</h2><p class="lede">Drag the divider or use the arrow keys to compare each pair.</p></div>
+        </header>
+        <!-- Add only before/after photos with documented client permission for this website. -->
+        <div class="comparison-grid" data-comparisons></div>
+      </div>
+    </section>
+
+    <section class="section booking-section" id="booking-steps" aria-labelledby="booking-steps-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          
+          <h2 id="booking-steps-title">How booking works.</h2>
+        </header>
+        <ol class="steps-list">
+          <li><span class="micro">01</span><h3>Message us on WhatsApp</h3><p>Tell us the service and date you have in mind.</p></li>
+          <li><span class="micro">02</span><h3>We confirm the details</h3><p>We’ll reply with availability and confirm your slot and what’s included.</p></li>
+          <li><span class="micro">03</span><h3>Visit and relax</h3><p>Come to the salon in Gujranwala at the time we’ve confirmed.</p></li>
+        </ol>
+        <p><a class="text-link" href="#booking" data-open-booking hidden>Use the appointment form</a></p>
+        <div class="bridal-callout" id="bridal">
+          <div><h3>Planning your bridal look?</h3></div>
+          <div><p>A trial is a chance to discuss your outfit and jewellery and try a makeup direction before the event. Ask about trial availability as soon as your wedding dates are set, ideally a few months ahead.</p><a class="button primary" href="#contact" data-book data-service="a bridal consultation">Book a bridal consultation <svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          
+          <div class="head-row">
+            <div><h2 id="gallery-title">The Shiza edit.</h2><p class="lede">Salon portfolio photos are pending. Browse the labelled preview panels.</p></div>
+            <div class="carousel-controls">
+              <button class="icon-button" type="button" data-gallery-prev aria-label="Scroll gallery left"><svg class="icon" aria-hidden="true"><use href="#i-left"></use></svg></button>
+              <button class="icon-button" type="button" data-gallery-next aria-label="Scroll gallery right"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+            </div>
+          </div>
+        </header>
+        <!-- REPLACE WITH SALON PHOTOS. Replace each .art with an img with descriptive alt; the lightbox uses the same element. -->
+        <div class="gallery-track" data-gallery tabindex="0" role="region" aria-label="Salon lookbook">
+          <button class="gallery-tile" type="button" data-look="The Bridal Edit"><span class="art" aria-hidden="true"><svg class="artwork"><use href="#art-arch"></use></svg></span><span class="gallery-caption"><strong>REPLACE: The Bridal Edit photo</strong><svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></span></button>
+          <button class="gallery-tile" type="button" data-look="The Hair Edit"><span class="art art-hair" aria-hidden="true"><svg class="artwork"><use href="#art-ribbon"></use></svg></span><span class="gallery-caption"><strong>REPLACE: The Hair Edit photo</strong><svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></span></button>
+          <button class="gallery-tile" type="button" data-look="The Skin Edit"><span class="art art-skin" aria-hidden="true"><svg class="artwork"><use href="#art-petal"></use></svg></span><span class="gallery-caption"><strong>REPLACE: The Skin Edit photo</strong><svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></span></button>
+          <button class="gallery-tile" type="button" data-look="The Nail Edit"><span class="art art-nails" aria-hidden="true"><svg class="artwork"><use href="#art-petal"></use></svg></span><span class="gallery-caption"><strong>REPLACE: The Nail Edit photo</strong><svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></span></button>
+          <button class="gallery-tile" type="button" data-look="Evening Glam"><span class="art art-party" aria-hidden="true"><svg class="artwork"><use href="#art-arch"></use></svg></span><span class="gallery-caption"><strong>REPLACE: Evening Glam photo</strong><svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></span></button>
+          <button class="gallery-tile" type="button" data-look="The Spa Edit"><span class="art art-spa" aria-hidden="true"><svg class="artwork"><use href="#art-ribbon"></use></svg></span><span class="gallery-caption"><strong>REPLACE: The Spa Edit photo</strong><svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section social" id="social" aria-labelledby="social-title">
+      <div class="wrap">
+        <header class="section-head reveal">
+          
+          <div class="head-row"><h2 id="social-title">Keep in touch.</h2><p class="lede">See recent looks, find us on the map or ask about current packages.</p></div>
+        </header>
+        <div class="social-grid" data-stagger>
+          <a class="social-card" href="https://www.instagram.com/shiza_salon/?hl=en" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg><h3>Instagram</h3><p>Bridal details, finishing touches and updates from the salon.</p><span class="text-link">Follow @shiza_salon <svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></span></a>
+          <a class="social-card" href="https://share.google/XXqeTulvmb62hRuFP" data-google target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg><h3>Google Maps &amp; Reviews</h3><p>Get directions in Gujranwala and read what clients have shared.</p><span class="text-link">Open Google profile <svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></span></a>
+          <a class="social-card" href="#contact" data-book><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg><h3>WhatsApp</h3><p>Ask about availability, bridal packages and seasonal offers.</p><span class="text-link">Chat with the salon <svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-layout">
+        <header class="section-head reveal">
+          
+          <h2 id="faq-title">Booking and salon FAQs</h2>
+          
+        </header>
+        <div class="faq-list reveal">
+          <details><summary><span class="section-index">01</span> How do I book?<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p class="answer">Message us with your service, date and time.</p></details>
+          <details><summary><span class="section-index">02</span> What products do you use?<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p class="answer">Ask about products and mention any sensitivities.</p></details>
+          <details><summary><span class="section-index">03</span> When should I book bridal?<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p class="answer">Message us once your dates are set.</p></details>
+          <details><summary><span class="section-index">04</span> What are your opening hours?<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p class="answer">Check <a class="text-link" href="#contact">salon hours</a> or message us.</p></details>
+          <details><summary><span class="section-index">05</span> Where is the salon located?<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p class="answer">We’re in Gujranwala. See the <a class="text-link" href="#contact">map below</a>.</p></details>
+          <details><summary><span class="section-index">06</span> How do I get a quote?<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p class="answer">Share your service and any event details.</p></details>
+        </div>
+      </div>
+    </section>
+    <noscript><div class="wrap"><p>Turn on JavaScript to use the booking form, browse services and view the interactive gallery. Find Shiza Salon on Instagram for booking details.</p></div></noscript>
+  </main>
+
+  <footer class="footer wine-section" id="contact">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="#home" class="brand"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg><span class="wordmark">Shiza Salon</span></a>
+          <p class="footer-intro">Bridal makeup, hair and beauty in Gujranwala, Pakistan.</p>
+          <div class="footer-social">
+            <a class="icon-button" aria-label="Shiza Salon on Instagram" href="https://www.instagram.com/shiza_salon/?hl=en" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+            <a class="icon-button" aria-label="Shiza Salon on Google" href="https://share.google/XXqeTulvmb62hRuFP" data-google target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg></a>
+            <a class="icon-button" aria-label="Shiza Salon on WhatsApp" href="#contact" data-book><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg></a>
+          </div>
+        </div>
+        <div>
+          <h2>Visit the salon</h2>
+          <a class="text-link" href="#booking" data-open-booking hidden>Appointment form</a>
+          <address>
+            <p>Address<br><span data-address>Gujranwala, Pakistan. Street address pending.</span></p>
+            <p>Phone<br><a data-call></a></p>
+            <p>Opening hours<br><span data-hours>Opening hours pending</span></p>
+          </address>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <h2>Quick links</h2>
+          <a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#gallery">Gallery</a><a href="#why">Why Us</a><a href="#faq">FAQ</a>
+        </nav>
+        <div class="map">
+          <h2>Find us</h2>
+          <p class="map-caption" data-map-caption>Gujranwala area map. Salon pin pending.</p>
+          <iframe title="Map of Gujranwala, Pakistan" src="https://maps.google.com/maps?q=Gujranwala%2C%20Pakistan&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <a class="text-link" href="https://share.google/XXqeTulvmb62hRuFP" data-google target="_blank" rel="noopener">Open Google profile <svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span data-year>2026</span> Shiza Salon</span></div>
+    </div>
+  </footer>
+
+  <aside class="mobile-book-bar" aria-label="Booking and phone">
+    <a class="button primary" href="#contact" data-book><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg> Book on WhatsApp</a>
+    <a class="button" href="#contact" data-call aria-label="Call Shiza Salon"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg> Call</a>
+  </aside>
+  <div class="floating">
+    <a class="icon-button back-top" href="#home" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-up"></use></svg></a>
+    <a class="icon-button whatsapp" href="#contact" data-book aria-label="Book on WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg></a>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+    <form method="dialog"><button class="icon-button dialog-close" aria-label="Close lookbook" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></form>
+    <div data-lightbox-art></div>
+    <div class="gallery-caption">
+      <h2 id="lightbox-title">Lookbook preview</h2>
+      <div class="carousel-controls">
+        <button class="icon-button" type="button" data-lightbox-prev aria-label="Previous lookbook image"><svg class="icon" aria-hidden="true"><use href="#i-left"></use></svg></button>
+        <button class="icon-button" type="button" data-lightbox-next aria-label="Next lookbook image"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></button>
+      </div>
+    </div>
+  </dialog>
+  <dialog id="booking" aria-labelledby="booking-title">
+    <form method="dialog"><button class="icon-button dialog-close" aria-label="Close booking"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button></form>
+    <div class="booking-inner">
+      
+      <h2 class="dialog-heading" id="booking-title" tabindex="-1">Request an appointment</h2>
+      <p>Share your preferred slot. The salon confirms availability on WhatsApp.</p>
+      <form class="booking-form" data-booking-form novalidate>
+        <div class="booking-fields">
+          <label for="booking-name">Name<input id="booking-name" name="name" autocomplete="name" maxlength="100" aria-describedby="error-name" required><span class="field-error" id="error-name" hidden></span></label>
+          <label for="booking-service">Service<select id="booking-service" name="service" aria-describedby="error-service" required><option value="">Choose a service</option></select><span class="field-error" id="error-service" hidden></span></label>
+          <label for="booking-date">Preferred date<input id="booking-date" type="date" name="date" aria-describedby="error-date" required><span class="field-error" id="error-date" hidden></span></label>
+          <label for="booking-time">Preferred time<select id="booking-time" name="time" aria-describedby="error-time" required><option value="">Choose a time</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select><span class="field-error" id="error-time" hidden></span></label>
+        </div>
+        <label for="booking-note">Note <span class="optional">(optional)</span><textarea id="booking-note" name="note" rows="2" maxlength="500"></textarea></label>
+        <div class="booking-actions">
+          <button class="button primary" type="submit">Continue to WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-out"></use></svg></button>
+          <a class="text-link" href="#contact" data-book>Message without the form</a>
+        </div>
+        <p class="booking-fallback" data-booking-fallback hidden><span data-booking-result role="status"></span> <a class="text-link" href="#contact" target="_blank" rel="noopener">Tap to open WhatsApp</a></p>
+      </form>
+    </div>
+  </dialog>
+  <div class="cursor-petal" aria-hidden="true"></div>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+      const root = document.documentElement;
+      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      const motionEase = 'cubic-bezier(0.22, 1, 0.36, 1)';
+      if (!reduceMotion.matches && window.scrollY < 12 && (!location.hash || location.hash === '#home')) {
+        root.classList.add('intro-active');
+        setTimeout(() => root.classList.remove('intro-active'), 1800);
+        document.addEventListener('focusin', () => root.classList.remove('intro-active'), { once: true });
+      }
+      const pad = (value) => String(value).padStart(2, '0');
+      const wrapIndex = (value, total) => ((value % total) + total) % total;
+      const setIcon = (button, icon) => $('use', button).setAttribute('href', '#i-' + icon);
+
+      const categories = ['All', 'Bridal', 'Hair', 'Skin', 'Nails', 'Grooming'];
+      const instagram = CONFIG.INSTAGRAM_URL;
+      const weekdayKeys = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+      const karachiClock = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Karachi', weekday: 'short', year: 'numeric', month: '2-digit',
+        day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+      });
+      const pkr = new Intl.NumberFormat('en-PK');
+      const genericMessage = "Assalam o Alaikum! I'd like to book an appointment at Shiza Salon. Could you please share available slots?";
+
+      function element(tag, className, content) {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (content !== undefined) node.textContent = content;
+        return node;
+      }
+
+      function icon(name) {
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        const use = document.createElementNS(svg.namespaceURI, 'use');
+        svg.setAttribute('class', 'icon');
+        svg.setAttribute('aria-hidden', 'true');
+        use.setAttribute('href', '#i-' + name);
+        svg.append(use);
+        return svg;
+      }
+
+      function placeholder(label) {
+        const frame = element('div', 'media-placeholder');
+        frame.append(element('span', '', label));
+        return frame;
+      }
+
+      function media(src, alt, label, eager = false) {
+        if (!src) return placeholder(label);
+        const image = element('img');
+        image.alt = alt;
+        image.decoding = 'async';
+        image.loading = eager ? 'eager' : 'lazy';
+        if (eager) image.fetchPriority = 'high';
+        image.addEventListener('error', () => image.replaceWith(placeholder(label)), { once: true });
+        image.src = src;
+        return image;
+      }
+
+      function whatsappURL(message) {
+        return 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(message);
+      }
+
+      function bookingMessage(service) {
+        return service
+          ? "Assalam o Alaikum! I'd like to book " + service + " at Shiza Salon. Could you please share available dates and pricing?"
+          : genericMessage;
+      }
+
+      function setBookingLink(link) {
+        link.href = whatsappURL(bookingMessage(link.dataset.service));
+        link.target = '_blank';
+        link.rel = 'noopener';
+      }
+
+      function pakistanTime(now = new Date()) {
+        return Object.fromEntries(karachiClock.formatToParts(now).filter(({ type }) => type !== 'literal').map(({ type, value }) => [type, value]));
+      }
+
+      function setupContact() {
+        const phone = CONFIG.WHATSAPP;
+        const displayNumber = '+' + phone.slice(0, 2) + ' ' + phone.slice(2, 5) + ' ' + phone.slice(5);
+        $$('[data-call]').forEach((link) => {
+          link.href = 'tel:+' + phone;
+          if (!link.textContent.trim()) link.textContent = displayNumber;
+          else link.setAttribute('aria-label', 'Call Shiza Salon at ' + displayNumber);
+        });
+        $$('[data-google]').forEach((link) => { link.href = CONFIG.GOOGLE_PROFILE_URL; });
+        $('[data-rating]').textContent = CONFIG.GOOGLE_RATING == null ? 'Google rating pending' : Number(CONFIG.GOOGLE_RATING).toFixed(1) + ' / 5 on Google';
+        $('[data-rating-count]').textContent = CONFIG.GOOGLE_REVIEW_COUNT == null ? '' : pkr.format(CONFIG.GOOGLE_REVIEW_COUNT) + ' reviews';
+        animateFigure($('[data-rating]'), CONFIG.GOOGLE_RATING, (value) => value.toFixed(1) + ' / 5 on Google');
+        animateFigure($('[data-rating-count]'), CONFIG.GOOGLE_REVIEW_COUNT, (value) => pkr.format(Math.round(value)) + ' reviews');
+        if (CONFIG.SALON_ADDRESS) {
+          $('[data-address]').textContent = CONFIG.SALON_ADDRESS;
+          const map = $('.map iframe');
+          map.title = 'Map showing the salon address';
+          $('[data-map-caption]').hidden = true;
+          map.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(CONFIG.SALON_ADDRESS + ', Gujranwala, Pakistan') + '&output=embed';
+        }
+        const schemaNode = $('script[type="application/ld+json"]');
+        const schema = JSON.parse(schemaNode.textContent);
+        schema.telephone = '+' + phone;
+        if (CONFIG.SALON_ADDRESS) schema.address.streetAddress = CONFIG.SALON_ADDRESS;
+        schema.sameAs = [instagram, CONFIG.GOOGLE_PROFILE_URL];
+        schemaNode.textContent = JSON.stringify(schema, null, 2);
+
+        const hours = CONFIG.HOURS;
+        const validTime = /^(?:[01]\d|2[0-3]):[0-5]\d$/;
+        const ready = hours && weekdayKeys.every((key) => Array.isArray(hours[key]) && hours[key].every((period) =>
+          Array.isArray(period) && period.length === 2 && period.every((time) => validTime.test(time)) && period[0] !== period[1]));
+        if (!ready) return;
+
+        const schedule = new Map();
+        weekdayKeys.forEach((key) => {
+          const times = hours[key].map(([opens, closes]) => opens + '–' + closes).join(', ') || 'Closed';
+          if (!schedule.has(times)) schedule.set(times, []);
+          schedule.get(times).push(key[0].toUpperCase() + key.slice(1));
+        });
+        $('[data-hours]').textContent = Array.from(schedule, ([times, days]) => days.join(', ') + ' / ' + times).join('\n');
+        const badge = $('[data-open-status]');
+        function updateHours() {
+          const time = pakistanTime();
+          const today = weekdayKeys.indexOf(time.weekday.toLowerCase());
+          const previous = wrapIndex(today - 1, weekdayKeys.length);
+          const localTime = time.hour + ':' + time.minute;
+          const openToday = hours[weekdayKeys[today]].some(([opens, closes]) => opens <= localTime && (closes < opens || localTime < closes));
+          const openFromYesterday = hours[weekdayKeys[previous]].some(([opens, closes]) => closes < opens && localTime < closes);
+          badge.textContent = openToday || openFromYesterday ? 'Open now' : 'Closed';
+          badge.title = 'Pakistan time (Asia/Karachi)';
+        }
+        updateHours();
+        setInterval(updateHours, 15000);
+        document.addEventListener('visibilitychange', updateHours);
+      }
+
+      function setupBooking() {
+        const dialog = $('#booking');
+        const form = $('[data-booking-form]', dialog);
+        const service = $('#booking-service');
+        CONFIG.SERVICES.forEach(({ name }) => service.append(new Option(name, name)));
+        service.append(new Option('Bridal consultation', 'Bridal consultation'));
+        const fallback = $('[data-booking-fallback]', dialog);
+        const result = $('[data-booking-result]', fallback);
+        const fallbackLink = $('a', fallback);
+        let opener;
+        const dateField = form.elements.namedItem('date');
+        const required = [
+          ['name', 'Please enter your name.'],
+          ['service', 'Choose the service you’d like to book.'],
+          ['date', 'Choose a preferred date.'],
+          ['time', 'Choose morning, afternoon or evening.'],
+        ];
+        function localDate() {
+          const { year, month, day } = pakistanTime();
+          return year + '-' + month + '-' + day;
+        }
+        function setError(input, message) {
+          const error = $('#error-' + input.name, dialog);
+          error.textContent = message;
+          error.hidden = !message;
+          if (message) input.setAttribute('aria-invalid', 'true');
+          else input.removeAttribute('aria-invalid');
+        }
+        $$('[data-book]').forEach((link) => {
+          setBookingLink(link);
+        });
+        $$('[data-open-booking]').forEach((link) => {
+          link.hidden = false;
+          link.setAttribute('aria-haspopup', 'dialog');
+          link.addEventListener('click', (event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            const fromMobile = menu.contains(link);
+            if (!menu.inert) setMenu(false);
+            opener = fromMobile ? menuButton : link;
+            dateField.min = localDate();
+            $('.booking-inner', dialog).scrollTop = 0;
+            fallback.hidden = true;
+            dialog.showModal();
+            $('#booking-title').focus({ preventScroll: true });
+          });
+        });
+        dialog.addEventListener('close', () => {
+          if (opener?.getClientRects().length) opener.focus({ preventScroll: true });
+        });
+        form.addEventListener('input', (event) => {
+          if (required.some(([name]) => name === event.target.name)) setError(event.target, '');
+          fallback.hidden = true;
+        });
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          fallback.hidden = true;
+          const today = localDate();
+          dateField.min = today;
+          let firstError;
+          required.forEach(([name, missingMessage]) => {
+            const input = form.elements.namedItem(name);
+            let message = input.value.trim() ? '' : missingMessage;
+            if (name === 'date' && input.value && input.value < today) message = 'Choose today or a future date in Pakistan time.';
+            setError(input, message);
+            if (message && !firstError) firstError = input;
+          });
+          if (firstError) {
+            firstError.focus();
+            return;
+          }
+
+          const data = new FormData(form);
+          const serviceName = data.get('service');
+          const date = new Intl.DateTimeFormat('en-PK', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(data.get('date') + 'T12:00:00Z'));
+          const lines = [
+            "Assalam o Alaikum! I'd like to request an appointment at Shiza Salon.",
+            'Name: ' + data.get('name').trim(),
+            'Service: ' + serviceName,
+            'Preferred date: ' + date,
+            'Preferred time: ' + data.get('time'),
+          ];
+          if (data.get('note').trim()) lines.push('Note: ' + data.get('note').trim());
+          lines.push('Could you please confirm availability and pricing?');
+          const url = whatsappURL(lines.join('\n'));
+          // Open a blank tab synchronously so we can detect a popup block. Sever
+          // the opener before directing the new tab to the external destination.
+          let tab;
+          try {
+            tab = window.open('about:blank', '_blank');
+            if (tab) {
+              tab.opener = null;
+              tab.location.replace(url);
+            }
+          } catch {
+            tab = null;
+          }
+          fallbackLink.href = url;
+          fallback.hidden = false;
+          result.textContent = tab ? 'WhatsApp opened in a new tab.' : 'Your browser blocked the new tab.';
+          if (!tab) fallbackLink.focus();
+        });
+        return dialog;
+      }
+
+      function setupAnnouncement() {
+        if (!CONFIG.ANNOUNCEMENT.trim()) return;
+        const announcement = $('[data-announcement]');
+        const key = 'shiza-dismissed-offer';
+        try { if (sessionStorage.getItem(key) === CONFIG.ANNOUNCEMENT) return; } catch {}
+        $('[data-announcement-text]').textContent = CONFIG.ANNOUNCEMENT;
+        announcement.hidden = false;
+        $('[data-dismiss-announcement]').addEventListener('click', () => {
+          announcement.hidden = true;
+          $('.site-header .brand').focus();
+          try { sessionStorage.setItem(key, CONFIG.ANNOUNCEMENT); } catch {}
+        });
+      }
+
+      function setupCursor() {
+        if (!CONFIG.CURSOR_PETAL) return;
+        const petal = $('.cursor-petal');
+        const fine = matchMedia('(hover: hover) and (pointer: fine)');
+        let frame = 0;
+        let x = 0;
+        let y = 0;
+        function move(event) {
+          if (event.pointerType !== 'mouse' || !fine.matches || reduceMotion.matches) return;
+          x = event.clientX + 14;
+          y = event.clientY + 12;
+          if (!frame) frame = requestAnimationFrame(() => {
+            petal.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0) rotate(30deg)';
+            petal.classList.add('is-visible');
+            frame = 0;
+          });
+        }
+        const refresh = () => {
+          petal.classList.toggle('is-enabled', fine.matches && !reduceMotion.matches);
+          petal.classList.remove('is-visible');
+        };
+        fine.addEventListener('change', refresh);
+        reduceMotion.addEventListener('change', refresh);
+        addEventListener('pointermove', move, { passive: true });
+        document.addEventListener('pointerleave', () => petal.classList.remove('is-visible'));
+        refresh();
+      }
+
+      function setupContent() {
+        const grid = $('[data-services]');
+        const filters = $('[data-service-filters]');
+        const filterStatus = $('[data-filter-status]');
+        const prices = $('[data-prices]');
+        const entries = [];
+        const buttons = [];
+
+        CONFIG.SERVICES.forEach((service) => {
+          const card = element('article', 'service-entry ' + service.layout);
+          const figure = element('div', 'service-photo');
+          const photo = service.photo === true ? 'assets/services/' + service.slug + '.jpg' : service.photo;
+          figure.append(media(photo, service.alt || service.name + ' at Shiza Salon', service.name));
+          const copy = element('div', 'service-copy');
+          const startingPrice = service.price == null ? 'From PKR ____' : 'From PKR ' + pkr.format(service.price);
+          const booking = element('a', 'text-link', 'Book on WhatsApp');
+          booking.dataset.book = '';
+          booking.dataset.service = service.name;
+          booking.setAttribute('aria-label', 'Book ' + service.name + ' on WhatsApp');
+          copy.append(
+            element('h3', '', service.name),
+            element('p', '', service.description),
+            element('p', 'service-meta', startingPrice + (service.duration ? ' / ' + service.duration : '')),
+            booking
+          );
+          card.append(figure, copy);
+          grid.append(card);
+          entries.push({ card, service });
+        });
+
+        categories.forEach((category) => {
+          const button = element('button', 'button', category);
+          button.type = 'button';
+          button.setAttribute('aria-pressed', String(category === 'All'));
+          button.addEventListener('click', () => filterServices(category));
+          filters.append(button);
+          buttons.push(button);
+          if (category === 'All') return;
+
+          const details = element('details');
+          const title = element('summary', '', category);
+          title.append(icon('plus'));
+          const list = element('dl', 'answer');
+          CONFIG.SERVICES.filter((service) => service.category === category).forEach(({ name, price }) => {
+            const row = element('div');
+            row.append(element('dt', '', name), element('dd', '', price == null ? 'Price on request' : 'From PKR ' + pkr.format(price)));
+            list.append(row);
+          });
+          details.append(title, list);
+          prices.append(details);
+        });
+
+        function filterServices(category, focus = false) {
+          const index = categories.indexOf(category);
+          if (index < 0) return;
+          const active = buttons[index];
+          const previous = filters.querySelector('[aria-pressed="true"]');
+          if (focus) active.focus({ preventScroll: true });
+          if (previous === active) return;
+          buttons.forEach((button) => button.setAttribute('aria-pressed', String(button === active)));
+          const starts = new Map(entries.filter(({ card }) => !card.hidden)
+            .map(({ card }) => [card, card.getBoundingClientRect()]));
+          grid.classList.toggle('is-filtered', category !== 'All');
+          entries.forEach(({ card, service }) => {
+            card.getAnimations().filter(({ id }) => id === 'service-filter').forEach((animation) => animation.cancel());
+            card.hidden = category !== 'All' && category !== service.category;
+          });
+          let shown = 0;
+          entries.forEach(({ card }) => {
+            if (card.hidden) return;
+            if (!reduceMotion.matches) {
+              const start = starts.get(card);
+              const end = card.getBoundingClientRect();
+              const first = start
+                ? { transform: 'translate(' + (start.left - end.left) + 'px,' + (start.top - end.top) + 'px)' }
+                : { opacity: .2, transform: 'translateY(16px)' };
+              card.animate([first, { opacity: 1, transform: 'none' }], {
+                id: 'service-filter',
+                duration: 480, delay: Math.min(shown * 72, 288), easing: motionEase, fill: 'backwards'
+              });
+            }
+            shown += 1;
+          });
+          filterStatus.textContent = shown + ' ' + (shown === 1 ? 'service' : 'services') + ' shown.';
+        }
+
+        const promises = $('[data-promises]');
+        CONFIG.PROMISES.forEach(({ title, text }, index) => {
+          const item = element('li');
+          const copy = element('div');
+          copy.append(element('h3', '', title), element('p', '', text));
+          item.append(element('span', 'micro', pad(index + 1)), copy);
+          promises.append(item);
+        });
+        $('[data-promise-intro]').hidden = CONFIG.PROMISES.every(({ text }) => text && !text.startsWith('['));
+
+        setupVerifiedStats();
+
+        const team = $('[data-team]');
+        CONFIG.TEAM.forEach(({ name, role, speciality, photo, alt }) => {
+          const card = element('article', 'team-card');
+          const figure = element('div', 'team-photo');
+          const copy = element('div', 'team-copy');
+          figure.append(media(photo, alt || 'Portrait of ' + name, 'REPLACE: team photo'));
+          copy.append(element('h3', '', name), element('p', '', role + ' / ' + speciality));
+          card.append(figure, copy);
+          team.append(card);
+        });
+
+        const comparisons = $('[data-comparisons]');
+        CONFIG.TRANSFORMATIONS.forEach(({ title, before, beforeAlt, after, afterAlt }) => {
+          const figure = element('figure');
+          const comparisonFrame = element('div', 'comparison-window');
+          const beforeLayer = element('div', 'comparison-layer comparison-before');
+          const afterLayer = element('div', 'comparison-layer comparison-after');
+          beforeLayer.append(media(before, beforeAlt || title + ' before the appointment', 'REPLACE: before photo'));
+          afterLayer.append(media(after, afterAlt || title + ' after the appointment', 'REPLACE: after photo'));
+          if (before) beforeLayer.append(element('span', 'comparison-label micro', 'Before'));
+          if (after) afterLayer.append(element('span', 'comparison-label micro', 'After'));
+          const range = element('input', 'comparison-range');
+          range.type = 'range';
+          range.min = '0';
+          range.max = '100';
+          range.value = '50';
+          range.setAttribute('aria-label', 'Compare before and after for ' + title);
+          const handle = element('span', 'comparison-handle');
+          const thumb = element('span', 'icon-button');
+          handle.setAttribute('aria-hidden', 'true');
+          thumb.append(icon('left'), icon('arrow'));
+          handle.append(thumb);
+          function updateComparison() {
+            comparisonFrame.style.setProperty('--split', range.value + '%');
+            range.setAttribute('aria-valuetext', range.value + '% before, ' + (100 - Number(range.value)) + '% after');
+          }
+          range.addEventListener('input', updateComparison);
+          updateComparison();
+          comparisonFrame.append(afterLayer, beforeLayer, range, handle);
+          figure.append(comparisonFrame, element('figcaption', '', title));
+          comparisons.append(figure);
+        });
+
+        if (CONFIG.BRIDAL_HERO) {
+          const hero = $('[data-bridal-hero]');
+          const image = media(CONFIG.BRIDAL_HERO, 'Bridal makeup and styling by Shiza Salon in Gujranwala', '[BRIDAL_HERO_IMAGE]', true);
+          image.addEventListener('error', () => {
+            const fallback = $('.media-placeholder', hero);
+            if (fallback) fallback.remove();
+          }, { once: true });
+          hero.querySelectorAll('img').forEach((photo) => photo.remove());
+          hero.dataset.label = 'Shiza Salon bridal look';
+          hero.append(image);
+        }
+      }
+
+      function setupVerifiedStats() {
+        const values = CONFIG.STATS.filter(({ label, value }) => label && Number.isFinite(value) && value >= 0);
+        if (!values.length) return;
+        const stats = $('[data-stats]');
+        const items = values.map(({ label, value, suffix = '' }) => {
+          const item = element('div');
+          const number = element('dd', '', pkr.format(value) + suffix);
+          item.append(element('dt', '', label), number);
+          stats.append(item);
+          return { number, value, suffix };
+        });
+        stats.hidden = false;
+        items.forEach(({ number, value, suffix }) => animateFigure(number, value, (current) => pkr.format(Math.round(current * 100) / 100) + suffix));
+      }
+
+      function animateFigure(node, value, format) {
+        if (!Number.isFinite(value) || value <= 0 || reduceMotion.matches) return;
+        let played = false;
+        watchVisibility(node, (visible) => {
+          if (!visible || played || reduceMotion.matches) return;
+          played = true;
+          const start = performance.now();
+          function tick(now) {
+            const progress = reduceMotion.matches ? 1 : Math.min(1, (now - start) / 760);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            node.textContent = format(progress === 1 ? value : value * eased);
+            if (progress < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        });
+      }
+
+      function setupReviews() {
+        const stage = $('[data-review-stage]');
+        const track = $('[data-review-track]');
+        const samples = !CONFIG.REVIEWS.length;
+        // REPLACE WITH REAL REVIEWS. The sample cards contain placeholders only.
+        const reviews = samples ? CONFIG.REVIEW_PLACEHOLDERS : CONFIG.REVIEWS;
+        $('[data-review-intro]').hidden = !samples;
+        reviews.forEach(({ name, text }, index) => {
+          const card = element('article', 'review-card');
+          const person = element('div', 'review-person');
+          person.append(element('strong', '', name), element('span', 'review-tag micro', samples ? 'Sample review' : 'Google Review'));
+          card.append(person, element('blockquote', '', text));
+          card.setAttribute('aria-hidden', String(index !== 0));
+          track.append(card);
+        });
+        const count = $('[data-review-count]');
+        const cards = $$('.review-card', track);
+        const prev = $('[data-review-prev]');
+        const next = $('[data-review-next]');
+        const pause = $('[data-review-pause]');
+        let index = 0;
+        function paintWheel() {
+          cards.forEach((card, position) => {
+            const relative = wrapIndex(position - index + Math.floor(cards.length / 2), cards.length) - Math.floor(cards.length / 2);
+            const distance = Math.abs(relative);
+            card.setAttribute('aria-hidden', String(distance !== 0));
+            card.inert = distance !== 0;
+            card.style.setProperty('--review-offset', (Math.max(-2, Math.min(2, relative)) * 72) + '%');
+            card.style.setProperty('--review-tilt', (-Math.sign(relative) * 25) + 'deg');
+            card.style.setProperty('--review-scale', distance ? '.88' : '1');
+            card.style.setProperty('--review-opacity', distance > 1 ? '0' : distance === 1 ? '.58' : '1');
+            card.style.zIndex = String(3 - Math.min(distance, 2));
+          });
+          count.textContent = pad(index + 1) + ' / ' + pad(reviews.length);
+        }
+        paintWheel();
+        if (reviews.length < 2) {
+          prev.hidden = next.hidden = pause.hidden = true;
+          return;
+        }
+        setupCarousel({
+          region: stage.closest('[role="region"]'), surface: stage, prev, next, pause, label: 'reviews', interval: 7000,
+          step(direction, announce) {
+            index = wrapIndex(index + direction, reviews.length);
+            paintWheel();
+            if (announce) {
+              $('[data-review-status]').textContent = (samples ? 'Sample review ' : 'Review ') + (index + 1) +
+                ' of ' + reviews.length + (samples ? '' : '. ' + reviews[index].name + '. ' + reviews[index].text);
+            }
+          }
+        });
+      }
+
+      function setupReels() {
+        const reels = REELS.map((value, position) => ({
+          url: /^https:\/\/www\.instagram\.com\/reel\/(?!REPLACE_)[\w-]+\/?(?:\?.*)?$/.test(value) ? value : '',
+          title: 'Reel ' + pad(position + 1),
+        }));
+        if (!reels.length) {
+          $('[data-reels]').hidden = true;
+          return;
+        }
+        const section = $('[data-reels]');
+        const stage = $('[data-reel-viewport]');
+        const dots = $('[data-reel-dots]');
+        const pause = $('[data-reel-pause]');
+        const prev = $('[data-reel-prev]');
+        const next = $('[data-reel-next]');
+        const models = [];
+        let index = 0;
+        let visible = false;
+        let paused = false;
+        let hovering = false;
+        let focused = false;
+        let dragging;
+        let dragFrame = 0;
+        let ignoreClick = false;
+        let timer;
+
+        if (reels.some(({ url }) => url)) $('[data-reels-intro]').textContent = 'See makeup, hair and nail looks from Shiza Salon. Open a reel to watch it on Instagram.';
+        reels.forEach((reel, position) => {
+          const card = element('article', 'reel-card');
+          const link = element('a', 'reel-link');
+          link.href = reel.url || instagram;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.setAttribute('aria-label', reel.title + (reel.url ? ' — open reel on Instagram' : ' — open the salon’s Instagram profile'));
+          link.append(icon('instagram'), element('strong', '', reel.title),
+            element('span', '', reel.url ? 'Watch on Instagram' : 'Reel link pending'),
+            element('span', '', reel.url ? '' : 'Visit Instagram'));
+          const embed = element('div', 'reel-embed');
+          card.append(link, embed);
+          stage.append(card);
+
+          const dot = element('button', 'icon-button reel-dot');
+          dot.type = 'button';
+          dot.setAttribute('aria-label', 'Show ' + reel.title + ' reel');
+          dot.addEventListener('click', () => select(position));
+          dots.append(dot);
+          models.push({ card, link, embed, dot });
+        });
+
+        function distance(position) {
+          return wrapIndex(position - index + Math.floor(reels.length / 2), reels.length) - Math.floor(reels.length / 2);
+        }
+        function paint(offset = 0) {
+          const width = Math.min(innerWidth * .78, 330);
+          models.forEach(({ card }, position) => {
+            const step = distance(position);
+            const relative = step + offset / (width * .72);
+            const magnitude = Math.abs(relative);
+            card.style.setProperty('--shift', (relative * width * .76) + 'px');
+            card.style.setProperty('--depth', (-Math.min(magnitude, 2) * 72) + 'px');
+            card.style.setProperty('--tilt', (Math.max(-1.5, Math.min(relative, 1.5)) * -24) + 'deg');
+            card.style.setProperty('--reel-scale', String(1 - Math.min(magnitude, 2) * .09));
+            card.style.setProperty('--reel-opacity', String(magnitude < 1.65 ? 1 - magnitude * .18 : 0));
+            card.style.setProperty('--layer', String(8 - Math.round(magnitude * 3)));
+          });
+        }
+        function render(announce) {
+          models.forEach(({ card, dot, link }, position) => {
+            const active = position === index;
+            card.classList.toggle('is-active', active);
+            card.setAttribute('aria-hidden', String(!active));
+            card.inert = !active;
+            link.tabIndex = active ? 0 : -1;
+            dot.setAttribute('aria-current', String(active));
+          });
+          if (announce) $('[data-reel-status]').textContent = reels[index].title + ', reel ' + (index + 1) + ' of ' + reels.length;
+          paint();
+          syncPlayback();
+          syncEmbeds();
+        }
+        function canAdvance() {
+          return reels.length > 1 && visible && !paused && !hovering && !focused && !dragging && !document.hidden;
+        }
+        function syncPlayback() {
+          clearTimeout(timer);
+          if (canAdvance()) timer = setTimeout(() => move(1, false), 8500);
+        }
+
+        let embedScriptRequested = false;
+        function processEmbeds() {
+          if (window.instgrm?.Embeds) {
+            window.instgrm.Embeds.process();
+            return;
+          }
+          if (embedScriptRequested) return;
+          embedScriptRequested = true;
+          const script = element('script');
+          script.src = 'https://www.instagram.com/embed.js';
+          script.async = true;
+          script.addEventListener('load', () => window.instgrm?.Embeds.process());
+          document.head.append(script);
+        }
+
+        function syncEmbeds() {
+          if (!visible) return;
+          let hasEmbed = false;
+          models.forEach(({ card, embed }, position) => {
+            const url = reels[position].url;
+            if (!url || Math.abs(distance(position)) > 1) {
+              embed.replaceChildren();
+              card.classList.remove('has-embed');
+              return;
+            }
+            hasEmbed = true;
+            embed.inert = position !== index;
+            if (embed.firstChild) return;
+            const quote = element('blockquote', 'instagram-media');
+            quote.dataset.instgrmPermalink = url;
+            quote.dataset.instgrmVersion = '14';
+            const source = element('a', '', 'Watch on Instagram');
+            source.href = url;
+            quote.append(source);
+            const observer = new MutationObserver(() => {
+              const frame = embed.querySelector('iframe');
+              if (!frame) return;
+              observer.disconnect();
+              // An Instagram-owned iframe can render its own error page. Keep
+              // the direct reel link visible below it in either case.
+              frame.addEventListener('load', () => {
+                if (embed.contains(frame)) card.classList.add('has-embed');
+              }, { once: true });
+            });
+            observer.observe(embed, { childList: true, subtree: true });
+            embed.append(quote);
+            setTimeout(() => observer.disconnect(), 12000);
+          });
+          if (hasEmbed) processEmbeds();
+        }
+        function select(position, announce = true) {
+          const hadCardFocus = models[index].card.contains(document.activeElement);
+          if (hadCardFocus) stage.focus({ preventScroll: true });
+          index = wrapIndex(position, reels.length);
+          render(announce);
+          if (hadCardFocus) models[index].link.focus({ preventScroll: true });
+        }
+        function move(direction, announce = true) {
+          select(index + direction, announce);
+        }
+
+        const controls = prev.parentElement;
+        controls.hidden = reels.length < 2;
+        prev.addEventListener('click', () => move(-1));
+        next.addEventListener('click', () => move(1));
+        bindPause(pause, 'reels', (value) => { paused = value; syncPlayback(); });
+        watchVisibility(stage, (value) => {
+          visible = value;
+          syncPlayback();
+          syncEmbeds();
+        }, .22);
+        stage.addEventListener('pointerenter', (event) => {
+          if (event.pointerType !== 'mouse') return;
+          hovering = true;
+          syncPlayback();
+        });
+        stage.addEventListener('pointerleave', (event) => {
+          if (event.pointerType !== 'mouse') return;
+          hovering = false;
+          if (dragging && !dragging.moved) endDrag();
+          syncPlayback();
+        });
+        section.addEventListener('focusin', (event) => {
+          focused = event.target !== pause;
+          syncPlayback();
+        });
+        section.addEventListener('focusout', (event) => {
+          if (section.contains(event.relatedTarget)) return;
+          focused = false;
+          syncPlayback();
+        });
+        section.addEventListener('keydown', (event) => {
+          if (!stage.contains(event.target) || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+          event.preventDefault();
+          move(event.key === 'ArrowRight' ? 1 : -1);
+        });
+        document.addEventListener('visibilitychange', syncPlayback);
+
+        stage.addEventListener('dragstart', (event) => event.preventDefault());
+        stage.addEventListener('pointerdown', (event) => {
+          if (!event.isPrimary || event.button !== 0) return;
+          ignoreClick = false;
+          if (reels.length < 2 || event.target.closest('button, .reel-card-tag')) return;
+          dragging = { id: event.pointerId, x: event.clientX, lastX: event.clientX, lastAt: event.timeStamp, velocity: 0, offset: 0, moved: false };
+          syncPlayback();
+        });
+        stage.addEventListener('pointermove', (event) => {
+          if (dragging?.id !== event.pointerId) return;
+          const delta = event.clientX - dragging.x;
+          if (!dragging.moved && Math.abs(delta) < 8) return;
+          if (!dragging.moved) {
+            dragging.moved = true;
+            stage.setPointerCapture(event.pointerId);
+            stage.classList.add('is-dragging');
+            ignoreClick = true;
+          }
+          const elapsed = Math.max(event.timeStamp - dragging.lastAt, 10);
+          dragging.velocity = (event.clientX - dragging.lastX) / elapsed;
+          dragging.lastAt = event.timeStamp;
+          dragging.lastX = event.clientX;
+          dragging.offset = Math.max(-180, Math.min(delta, 180));
+          if (!dragFrame && !reduceMotion.matches) dragFrame = requestAnimationFrame(() => {
+            dragFrame = 0;
+            if (dragging) paint(dragging.offset);
+          });
+        });
+        function endDrag(event) {
+          if (!dragging || (event && event.pointerId !== dragging.id)) return;
+          const { moved, offset, velocity, lastAt } = dragging;
+          dragging = undefined;
+          stage.classList.remove('is-dragging');
+          const momentum = event && event.timeStamp - lastAt < 110 && !reduceMotion.matches ? velocity * 95 : 0;
+          const projected = offset + momentum;
+          if (event?.type === 'pointerup' && moved && Math.abs(projected) > 38) move(projected < 0 ? 1 : -1);
+          else {
+            paint();
+            syncPlayback();
+          }
+        }
+        addEventListener('pointerup', endDrag);
+        stage.addEventListener('pointercancel', endDrag);
+        stage.addEventListener('click', (event) => {
+          if (ignoreClick && event.detail) event.preventDefault();
+          ignoreClick = false;
+        }, true);
+        addEventListener('resize', () => paint(), { passive: true });
+        render(false);
+      }
+
+      $('[data-year]').textContent = new Date().getFullYear();
+
+      const themeButton = $('.theme-toggle');
+      function setTheme(dark) {
+        root.dataset.theme = dark ? 'dark' : 'light';
+        setIcon(themeButton, dark ? 'sun' : 'moon');
+        themeButton.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+        $('meta[name="theme-color"]').content = dark ? '#3B0A14' : '#FBF7EE';
+      }
+      try { setTheme(localStorage.getItem('shiza-theme') === 'dark'); } catch { setTheme(false); }
+      themeButton.addEventListener('click', () => {
+        setTheme(root.dataset.theme !== 'dark');
+        try { localStorage.setItem('shiza-theme', root.dataset.theme); } catch {}
+      });
+
+      const menuButton = $('.hamburger');
+      const menu = $('#mobile-menu');
+      const desktop = matchMedia('(min-width: 64rem)');
+      const pageContent = [$('.skip'), $('main'), $('footer'), $('.floating'), $('.mobile-book-bar')];
+      function setMenu(open, restore = true) {
+        document.body.classList.toggle('menu-open', open);
+        menu.inert = !open;
+        pageContent.forEach((element) => { element.inert = open; });
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        if (open) {
+          menu.style.setProperty('--menu-top', $('.site-header').getBoundingClientRect().bottom + 'px');
+          $('a', menu).focus();
+        }
+        else if (restore) menuButton.focus();
+      }
+      menuButton.addEventListener('click', () => setMenu(menu.inert));
+      $('.site-header .brand').addEventListener('click', () => {
+        if (!menu.inert) setMenu(false, false);
+      });
+      desktop.addEventListener('change', ({ matches }) => {
+        if (matches && !menu.inert) setMenu(false, false);
+      });
+      menu.addEventListener('click', (event) => {
+        const link = event.target.closest('a');
+        if (!link) return;
+        setMenu(false, link.hasAttribute('data-book'));
+        if (!link.hasAttribute('data-book')) {
+          const destination = $(link.hash);
+          destination.tabIndex = -1;
+          destination.focus({ preventScroll: true });
+        }
+      });
+      document.addEventListener('keydown', (event) => {
+        if (menu.inert) return;
+        if (event.key === 'Escape') setMenu(false);
+        if (event.key !== 'Tab') return;
+        const first = $('.site-header .brand');
+        const last = $('a:last-child', menu);
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
+
+      const header = $('.site-header');
+      const progress = $('.scroll-progress');
+      const backTop = $('.back-top');
+      const heroStage = $('[data-hero-stage]');
+      const parallaxImages = new Set();
+      let scrollFrame = 0;
+      function paintScroll() {
+        const distance = window.scrollY;
+        const length = root.scrollHeight - innerHeight;
+        header.classList.toggle('scrolled', distance > 12);
+        backTop.classList.toggle('is-visible', distance > 500);
+        progress.style.transform = 'scaleX(' + (length > 0 ? Math.min(1, Math.max(0, distance / length)) : 0) + ')';
+        heroStage.style.setProperty('--drift', reduceMotion.matches ? '0px' : Math.min(18, distance * .036) + 'px');
+        if (!reduceMotion.matches) parallaxImages.forEach((image) => {
+          const frame = image.parentElement.getBoundingClientRect();
+          const drift = (frame.top + frame.height / 2 - innerHeight / 2) * -.025;
+          image.style.setProperty('--image-drift', Math.max(-10, Math.min(10, drift)) + 'px');
+        });
+        scrollFrame = 0;
+      }
+      function queueScrollPaint() {
+        if (!scrollFrame) scrollFrame = requestAnimationFrame(paintScroll);
+      }
+      addEventListener('scroll', queueScrollPaint, { passive: true });
+      addEventListener('resize', queueScrollPaint);
+      addEventListener('load', queueScrollPaint);
+      reduceMotion.addEventListener('change', queueScrollPaint);
+      queueScrollPaint();
+
+      function watchVisibility(element, callback, threshold = .12) {
+        if (!('IntersectionObserver' in window)) {
+          callback(true);
+          return;
+        }
+        const observer = new IntersectionObserver(([entry]) => callback(entry.isIntersecting && entry.intersectionRatio >= threshold), { threshold });
+        observer.observe(element);
+      }
+
+      function setupReveals() {
+        if (!('IntersectionObserver' in window)) return;
+        const observer = new IntersectionObserver((entries) => entries.forEach(({ target, isIntersecting }) => {
+          if (!isIntersecting) return;
+          target.classList.add('is-visible');
+          observer.unobserve(target);
+        }), { threshold: .04 });
+        const sections = $$('main > section:not(.hero), footer');
+        sections.forEach((section) => {
+          const groups = $$('.section-head, .editorial-services, .service-filters, .price-guide, .rating-strip, .review-stage, .promise-list, .team-grid, .comparison-grid, .steps-list, .bridal-callout, .gallery-track, .social-grid, .faq-list, .footer-grid', section);
+          if (!groups.length) groups.push($('.wrap', section));
+          groups.filter(Boolean).forEach((group) => {
+            const items = group.matches('.price-guide, .review-stage, .bridal-callout, .gallery-track') ? [group] : [...group.children];
+            items.forEach((item, index) => {
+              item.classList.add('reveal');
+              item.style.setProperty('--delay', Math.min(index, 4) * 80 + 'ms');
+              observer.observe(item);
+            });
+          });
+          $$('.reveal', section).forEach((item) => {
+            // Group children reveal independently, so the parent stays visible.
+            if (item.querySelector('.reveal')) item.classList.remove('reveal');
+            else observer.observe(item);
+          });
+        });
+        root.classList.add('js', 'reveal-ready');
+      }
+
+      function setupImageParallax() {
+        if (!('IntersectionObserver' in window)) return;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(({ target, isIntersecting }) => {
+            if (isIntersecting) parallaxImages.add(target);
+            else parallaxImages.delete(target);
+          });
+          queueScrollPaint();
+        });
+        $$('.service-photo > img, .gallery-photo').forEach((image) => observer.observe(image));
+      }
+
+      function setupAccordionMotion() {
+        $$('.faq-list details').forEach((details) => {
+          const summary = $('summary', details);
+          const answer = $('.answer', details);
+          if (!answer) return;
+          let pendingClose;
+          summary.addEventListener('click', (event) => {
+            if (reduceMotion.matches || event.defaultPrevented) return;
+            event.preventDefault();
+            if (pendingClose) {
+              pendingClose.cancel();
+              pendingClose = undefined;
+              return;
+            }
+            if (!details.open) {
+              changeLayout(true);
+              answer.animate([{ opacity: 0, transform: 'translateY(-10px) scaleY(.94)' }, { opacity: 1, transform: 'none' }], {
+                duration: 480, easing: motionEase,
+              });
+              return;
+            }
+            pendingClose = answer.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(-8px) scaleY(.94)' }], {
+              duration: 400, easing: motionEase,
+            });
+            pendingClose.addEventListener('finish', () => {
+              pendingClose = undefined;
+              changeLayout(false);
+            }, { once: true });
+          });
+
+          function changeLayout(open) {
+            const rows = [...details.parentElement.children];
+            const siblings = rows.slice(rows.indexOf(details) + 1);
+            const offsets = siblings.map((item) => item.getBoundingClientRect().top);
+            details.open = open;
+            if (reduceMotion.matches) return;
+            siblings.forEach((item, index) => {
+              item.getAnimations().filter(({ id }) => id === 'accordion-layout').forEach((animation) => animation.cancel());
+              const shift = offsets[index] - item.getBoundingClientRect().top;
+              if (shift) item.animate([{ transform: 'translateY(' + shift + 'px)' }, { transform: 'none' }], {
+                id: 'accordion-layout', duration: 400, easing: motionEase,
+              });
+            });
+          }
+        });
+      }
+
+      function bindPause(button, label, update) {
+        let paused = false;
+        function render() {
+          const disabled = reduceMotion.matches;
+          button.hidden = disabled;
+          setIcon(button, paused ? 'play' : 'pause');
+          button.setAttribute('aria-label', (paused ? 'Play ' : 'Pause ') + label);
+          update(paused || disabled);
+        }
+        button.addEventListener('click', () => {
+          paused = !paused;
+          render();
+        });
+        reduceMotion.addEventListener('change', render);
+        render();
+      }
+
+      function addSwipe(surface, onSwipe) {
+        let pointer;
+        let start;
+        surface.addEventListener('pointerdown', (event) => {
+          if (!event.isPrimary || event.button !== 0) return;
+          pointer = event.pointerId;
+          start = event.clientX;
+          surface.setPointerCapture(pointer);
+        });
+        surface.addEventListener('pointerup', (event) => {
+          if (pointer !== event.pointerId) return;
+          pointer = undefined;
+          const delta = event.clientX - start;
+          if (Math.abs(delta) > 32) onSwipe(delta < 0 ? 1 : -1);
+        });
+        surface.addEventListener('pointercancel', () => { pointer = undefined; });
+      }
+
+      function setupCarousel({ region, surface, prev, next, pause, label, interval, step, onSchedule }) {
+        let visible = false;
+        let paused = false;
+        let hovering = false;
+        let focused = false;
+        let timer;
+        function schedule() {
+          clearTimeout(timer);
+          const running = visible && !paused && !hovering && !focused && !document.hidden;
+          onSchedule?.(running);
+          if (running) timer = setTimeout(() => move(1, false), interval);
+        }
+        function move(direction, announce = true) {
+          step(direction, announce);
+          schedule();
+        }
+        prev.addEventListener('click', () => move(-1));
+        next.addEventListener('click', () => move(1));
+        addSwipe(surface, move);
+        region.addEventListener('keydown', (event) => {
+          if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+          event.preventDefault();
+          move(event.key === 'ArrowRight' ? 1 : -1);
+        });
+        region.addEventListener('pointerenter', (event) => {
+          if (event.pointerType === 'mouse') hovering = true;
+          schedule();
+        });
+        region.addEventListener('pointerleave', (event) => {
+          if (event.pointerType === 'mouse') hovering = false;
+          schedule();
+        });
+        region.addEventListener('focusin', (event) => {
+          focused = event.target !== pause;
+          schedule();
+        });
+        region.addEventListener('focusout', (event) => {
+          if (region.contains(event.relatedTarget)) return;
+          focused = false;
+          schedule();
+        });
+        document.addEventListener('visibilitychange', schedule);
+        bindPause(pause, label, (value) => { paused = value; schedule(); });
+        watchVisibility(surface, (value) => { visible = value; schedule(); });
+      }
+
+      const hero = $('[data-hero]');
+      const slides = $$('.hero-slide', hero);
+      let heroIndex = 0;
+      const dashes = slides.map(() => element('span', 'hero-dash'));
+      $('[data-hero-dashes]').append(...dashes);
+      setupCarousel({
+        region: hero, surface: heroStage,
+        prev: $('[data-hero-prev]'), next: $('[data-hero-next]'), pause: $('[data-hero-pause]'),
+        label: 'featured looks', interval: 5000,
+        onSchedule(running) {
+          dashes.forEach((dash, index) => {
+            dash.classList.remove('is-running');
+            dash.classList.toggle('is-current', index === heroIndex);
+          });
+          if (running) {
+            const active = dashes[heroIndex];
+            void active.offsetWidth;
+            active.classList.add('is-running');
+          }
+        },
+        step(direction, announce) {
+          heroIndex = wrapIndex(heroIndex + direction, slides.length);
+          slides.forEach((slide, index) => {
+            slide.classList.toggle('is-active', index === heroIndex);
+            slide.setAttribute('aria-hidden', String(index !== heroIndex));
+          });
+          const label = slides[heroIndex].dataset.label;
+          $('[data-hero-count]').textContent = pad(heroIndex + 1);
+          if (announce) $('[data-hero-status]').textContent = label + ', ' + (heroIndex + 1) + ' of ' + slides.length;
+        }
+      });
+
+      setupContent();
+      setupReviews();
+      setupReels();
+
+      const marquees = $('[data-marquees]');
+      watchVisibility(marquees, (visible) => marquees.classList.toggle('in-view', visible));
+      bindPause($('[data-marquee-pause]'), 'scrolling banners', (paused) => marquees.classList.toggle('is-paused', paused));
+      const gallery = $('[data-gallery]');
+      const tiles = $$('[data-look]', gallery);
+      tiles.forEach((tile) => {
+        const photo = CONFIG.GALLERY[tile.dataset.look];
+        if (!photo?.src || !photo.alt) return;
+        const artwork = tile.firstElementChild;
+        const caption = $('strong', tile);
+        const image = media(photo.src, photo.alt, 'REPLACE: gallery photo');
+        image.className = 'gallery-photo';
+        image.addEventListener('error', () => {
+          tile.firstElementChild.replaceWith(artwork);
+          caption.textContent = 'REPLACE: gallery photo';
+        }, { once: true });
+        artwork.replaceWith(image);
+        caption.textContent = tile.dataset.look;
+      });
+      function scrollGallery(direction) {
+        const gap = parseFloat(getComputedStyle(gallery).columnGap);
+        gallery.scrollBy({ left: direction * (tiles[0].offsetWidth + gap), behavior: reduceMotion.matches ? 'instant' : 'smooth' });
+      }
+      $('[data-gallery-prev]').addEventListener('click', () => scrollGallery(-1));
+      $('[data-gallery-next]').addEventListener('click', () => scrollGallery(1));
+      gallery.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        scrollGallery(event.key === 'ArrowLeft' ? -1 : 1);
+      });
+
+      let galleryDrag;
+      let suppressGalleryClick = false;
+      gallery.addEventListener('pointerdown', (event) => {
+        if (event.pointerType !== 'mouse' || event.button !== 0) return;
+        suppressGalleryClick = false;
+        galleryDrag = { id: event.pointerId, x: event.clientX, scroll: gallery.scrollLeft };
+      });
+      gallery.addEventListener('dragstart', (event) => event.preventDefault());
+      gallery.addEventListener('pointermove', (event) => {
+        if (galleryDrag?.id !== event.pointerId) return;
+        const delta = event.clientX - galleryDrag.x;
+        if (!suppressGalleryClick && Math.abs(delta) < 7) return;
+        if (!suppressGalleryClick) {
+          gallery.setPointerCapture(event.pointerId);
+          gallery.classList.add('is-dragging');
+          suppressGalleryClick = true;
+        }
+        gallery.scrollLeft = galleryDrag.scroll - delta;
+      });
+      function releaseGallery() {
+        galleryDrag = undefined;
+        gallery.classList.remove('is-dragging');
+      }
+      addEventListener('pointerup', releaseGallery);
+      gallery.addEventListener('pointercancel', releaseGallery);
+      gallery.addEventListener('click', (event) => {
+        if (suppressGalleryClick && event.detail) {
+          suppressGalleryClick = false;
+          return;
+        }
+        const tile = event.target.closest('[data-look]');
+        if (!tile) return;
+        renderLook(tiles.indexOf(tile));
+        lightbox.showModal();
+      });
+
+      const lightbox = $('#lightbox');
+      let lookIndex = 0;
+      function renderLook(index) {
+        lookIndex = wrapIndex(index, tiles.length);
+        const tile = tiles[lookIndex];
+        $('[data-lightbox-art]').replaceChildren(tile.firstElementChild.cloneNode(true));
+        $('#lightbox-title').textContent = tile.dataset.look;
+      }
+      $('[data-lightbox-prev]').addEventListener('click', () => renderLook(lookIndex - 1));
+      $('[data-lightbox-next]').addEventListener('click', () => renderLook(lookIndex + 1));
+      lightbox.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        renderLook(lookIndex + (event.key === 'ArrowLeft' ? -1 : 1));
+      });
+
+      setupReveals();
+      setupImageParallax();
+      setupAccordionMotion();
+      const booking = setupBooking();
+      setupContact();
+      setupAnnouncement();
+      setupCursor();
+      [lightbox, booking].forEach((dialog) => dialog.addEventListener('click', (event) => {
+        if (event.target !== dialog) return;
+        const bounds = dialog.getBoundingClientRect();
+        const outside = event.clientX < bounds.left || event.clientX > bounds.right ||
+          event.clientY < bounds.top || event.clientY > bounds.bottom;
+        if (outside) dialog.close();
+      }));
+    })();
+  </script>
+</body>
+</html>
